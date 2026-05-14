@@ -1,0 +1,203 @@
+@import "tailwindcss";
+
+@theme {
+  /* Editorial Corporate palette — locked per 03_Design_Theme_Decision.md §Color */
+  --color-navy: #0e1b2c;
+  --color-cream: #f1ece2;
+  --color-offwhite: #fafaf7;
+  --color-bronze: #b98b3a;
+  --color-bronze-soft: #c69a4f;
+  --color-charcoal: #1a1f26;
+  --color-divider: #e5e0d4;
+
+  /* Type system — Fraunces (display serif) + Inter (body sans), per spec candidates */
+  --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Helvetica, Arial, sans-serif;
+
+  /* Editorial scale — body 17–19, big hero, section heads 36–48 */
+  --text-eyebrow: 0.75rem;
+  --text-caption: 0.8125rem;
+  --text-body: 1.0625rem;
+  --text-body-lg: 1.1875rem;
+  --text-h3: 1.5rem;
+  --text-h2: 2.5rem;
+  --text-display: 4.5rem;
+}
+
+@layer base {
+  html {
+    background-color: var(--color-cream);
+    color: var(--color-charcoal);
+    font-family: var(--font-sans);
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background-color: var(--color-cream);
+    color: var(--color-charcoal);
+  }
+
+  ::selection {
+    background-color: var(--color-navy);
+    color: var(--color-cream);
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    color: var(--color-navy);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    line-height: 1.08;
+  }
+
+  /* Ensure links don't pick up underline by default — editorial restraint */
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+@layer components {
+  /* Editorial eyebrow — small caps with bronze accent */
+  .eyebrow {
+    font-family: var(--font-sans);
+    font-size: var(--text-eyebrow);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--color-bronze);
+    font-weight: 500;
+  }
+
+  .eyebrow-quiet {
+    font-family: var(--font-sans);
+    font-size: var(--text-eyebrow);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--color-charcoal);
+    opacity: 0.6;
+    font-weight: 500;
+  }
+
+  .caption {
+    font-family: var(--font-sans);
+    font-size: var(--text-caption);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-charcoal);
+    opacity: 0.55;
+  }
+
+  /* Editorial container — generous outer margins, 12-col grid */
+  .editorial-wrap {
+    width: 100%;
+    max-width: 1440px;
+    margin-inline: auto;
+    padding-inline: clamp(1.25rem, 6vw, 6rem);
+  }
+
+  /* Section padding — 120–160px vertical per spec */
+  .section {
+    padding-block: clamp(5rem, 10vw, 10rem);
+  }
+
+  /* Buttons — square / 4px radius, no gradients, no shadows */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.625rem;
+    padding: 0.95rem 1.625rem;
+    background-color: var(--color-navy);
+    color: var(--color-cream);
+    font-family: var(--font-sans);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    border-radius: 2px;
+    transition: background-color 0.25s ease, transform 0.25s ease;
+  }
+  .btn-primary:hover {
+    background-color: #1a2a40;
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.625rem;
+    padding: 0.9rem 1.625rem;
+    background-color: transparent;
+    color: var(--color-navy);
+    border: 1px solid var(--color-navy);
+    font-family: var(--font-sans);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    border-radius: 2px;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+  .btn-secondary:hover {
+    background-color: var(--color-navy);
+    color: var(--color-cream);
+  }
+
+  /* Inline editorial link — bronze underline that animates on hover */
+  .link-inline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-navy);
+    font-weight: 500;
+    border-bottom: 1px solid var(--color-bronze);
+    padding-bottom: 2px;
+    transition: color 0.25s ease, border-color 0.25s ease;
+  }
+  .link-inline:hover {
+    color: var(--color-bronze);
+  }
+  .link-inline .arrow {
+    transition: transform 0.25s ease;
+  }
+  .link-inline:hover .arrow {
+    transform: translateX(4px);
+  }
+
+  /* Bronze rule — 1px section divider */
+  .rule {
+    height: 1px;
+    background-color: var(--color-bronze);
+    opacity: 0.6;
+    width: 100%;
+  }
+
+  .rule-divider {
+    height: 1px;
+    background-color: var(--color-divider);
+    width: 100%;
+  }
+
+  /* Calm scroll-fade — replaces parallax / sticky pins per spec */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.9s ease-out, transform 0.9s ease-out;
+  }
+  .fade-in.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Reduced motion — kill the fade-in transform */
+@media (prefers-reduced-motion: reduce) {
+  .fade-in {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
