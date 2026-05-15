@@ -22,21 +22,23 @@ export default function Header() {
           Alsabahy<span className="text-[var(--color-bronze)]">.</span>
         </Link>
 
-        <nav
-          aria-label={t("primaryNavAriaLabel")}
-          className="hidden md:flex items-center gap-9 text-[0.875rem] text-[var(--color-cream)] tracking-wide"
-        >
-          {nav.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="opacity-90 hover:opacity-100 hover:text-[var(--color-bronze)] transition-colors"
-            >
-              {t(`nav.${item.key}`)}
-            </Link>
-          ))}
+        <div className="flex items-center gap-6 md:gap-9 text-[0.875rem] text-[var(--color-cream)] tracking-wide">
+          <nav
+            aria-label={t("primaryNavAriaLabel")}
+            className="hidden md:flex items-center gap-9"
+          >
+            {nav.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="opacity-90 hover:opacity-100 hover:text-[var(--color-bronze)] transition-colors"
+              >
+                {t(`nav.${item.key}`)}
+              </Link>
+            ))}
+          </nav>
           <LocaleSwitcher />
-        </nav>
+        </div>
       </div>
     </header>
   );
