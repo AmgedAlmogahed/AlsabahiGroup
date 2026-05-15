@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { setRequestLocale } from "next-intl/server";
 
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
@@ -14,9 +15,9 @@ import { BRANDS, getBrand } from "@/app/lib/brands";
 
 const SITE_URL = "https://alsabahygroup.com";
 
-type Params = { slug: string };
+type Params = { slug: string; locale: string };
 
-export function generateStaticParams(): Params[] {
+export function generateStaticParams() {
   return BRANDS.map((b) => ({ slug: b.slug }));
 }
 
@@ -25,17 +26,17 @@ export async function generateMetadata({
 }: {
   params: Promise<Params>;
 }): Promise<Metadata> {
-  const { slug } = await params;
-  const brand = getBrand(slug);
+  const { slug, locale } = await params;
+  const brand = getBrand(slug, locale);
   if (!brand) return {};
 
-  const url = `${SITE_URL}/brands/${slug}`;
+  const url = `${SITE_URL}${locale === "ar" ? "/ar" : ""}/brands/${slug}`;
   return {
     title: brand.seo.title,
     description: brand.seo.description,
     keywords: brand.seo.keywords,
     alternates: {
-      canonical: `/brands/${slug}`,
+      canonical: `${locale === "ar" ? "/ar" : ""}/brands/${slug}`,
       languages: {
         en: `/brands/${slug}`,
         ar: `/ar/brands/${slug}`,
@@ -47,6 +48,7 @@ export async function generateMetadata({
       title: brand.seo.title,
       description: brand.seo.description,
       siteName: "Alsabahy Group",
+      locale: locale === "ar" ? "ar_YE" : "en_US",
     },
     twitter: {
       card: "summary_large_image",
@@ -61,8 +63,9 @@ export default async function BrandPage({
 }: {
   params: Promise<Params>;
 }) {
-  const { slug } = await params;
-  const brand = getBrand(slug);
+  const { slug, locale } = await params;
+  setRequestLocale(locale);
+  const brand = getBrand(slug, locale);
   if (!brand) notFound();
 
   return (

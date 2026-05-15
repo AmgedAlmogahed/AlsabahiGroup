@@ -1,8 +1,11 @@
+import { useTranslations } from "next-intl";
 import type { Brand } from "@/app/lib/brands";
 import FadeIn from "../FadeIn";
 import BrandImage from "../BrandImage";
 
 export default function BrandInYemen({ brand }: { brand: Brand }) {
+  const t = useTranslations("brand.inYemen");
+
   return (
     <section className="section bg-[var(--color-navy)] text-[var(--color-cream)] relative overflow-hidden">
       <div
@@ -20,7 +23,7 @@ export default function BrandInYemen({ brand }: { brand: Brand }) {
           <FadeIn className="md:col-span-6">
             <BrandImage
               src={brand.images?.context}
-              alt={`${brand.name} on a Yemeni retail shelf — pharmacist or shopkeeper hand placing product, natural light, in-context shot.`}
+              alt={t("contextImageAlt", { brand: brand.name })}
               tone="navy"
               aspect="portrait"
             />

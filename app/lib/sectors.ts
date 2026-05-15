@@ -236,6 +236,16 @@ export const SECTORS: SectorConfig[] = [
   },
 ];
 
-export function getSector(slug: string): SectorConfig | undefined {
-  return SECTORS.find((s) => s.slug === slug);
+import { SECTORS_AR } from "./sectors.ar";
+
+export function getSectors(locale?: string): SectorConfig[] {
+  return locale === "ar" ? SECTORS_AR : SECTORS;
+}
+
+export function getSector(
+  slug: string,
+  locale?: string,
+): SectorConfig | undefined {
+  const source = locale === "ar" ? SECTORS_AR : SECTORS;
+  return source.find((s) => s.slug === slug);
 }

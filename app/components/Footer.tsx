@@ -1,6 +1,11 @@
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
+import { CONTACT } from "@/app/lib/operations";
 
 export default function Footer() {
+  const t = useTranslations("footer");
+  const h = useTranslations("header");
+
   return (
     <footer className="bg-[var(--color-navy)] text-[var(--color-cream)]">
       <div className="editorial-wrap pt-24 pb-10">
@@ -11,20 +16,19 @@ export default function Footer() {
               Alsabahy<span className="text-[var(--color-bronze)]">.</span>
             </p>
             <p className="mt-4 max-w-sm text-[0.95rem] opacity-75 leading-relaxed">
-              Yemen's authorized agent for the world's most trusted brands.
-              Since 1993.
+              {t("tagline")}
             </p>
           </div>
 
           {/* Column 2 — Navigate */}
           <div className="md:col-span-2">
             <h4 className="caption !text-[var(--color-cream)] !opacity-50 mb-5">
-              Navigate
+              {t("navigate")}
             </h4>
             <ul className="space-y-3 text-[0.95rem]">
               <li>
                 <Link href="/about" className="hover:text-[var(--color-bronze)]">
-                  About
+                  {h("nav.about")}
                 </Link>
               </li>
               <li>
@@ -32,7 +36,7 @@ export default function Footer() {
                   href="/sectors"
                   className="hover:text-[var(--color-bronze)]"
                 >
-                  Sectors
+                  {h("nav.sectors")}
                 </Link>
               </li>
               <li>
@@ -40,7 +44,7 @@ export default function Footer() {
                   href="/brands"
                   className="hover:text-[var(--color-bronze)]"
                 >
-                  Brands
+                  {h("nav.brands")}
                 </Link>
               </li>
               <li>
@@ -48,7 +52,7 @@ export default function Footer() {
                   href="/partner-with-us"
                   className="hover:text-[var(--color-bronze)]"
                 >
-                  Partner With Us
+                  {h("nav.partner")}
                 </Link>
               </li>
               <li>
@@ -56,7 +60,7 @@ export default function Footer() {
                   href="/contact"
                   className="hover:text-[var(--color-bronze)]"
                 >
-                  Contact
+                  {h("nav.contact")}
                 </Link>
               </li>
             </ul>
@@ -65,21 +69,22 @@ export default function Footer() {
           {/* Column 3 — Contact */}
           <div className="md:col-span-3">
             <h4 className="caption !text-[var(--color-cream)] !opacity-50 mb-5">
-              Contact
+              {t("contact")}
             </h4>
             <ul className="space-y-3 text-[0.95rem]">
               <li>
                 <a
-                  href="mailto:partnerships@alsabahygroup.com"
+                  href={`mailto:${CONTACT.partnershipsEmail}`}
                   className="hover:text-[var(--color-bronze)]"
                 >
-                  partnerships@alsabahygroup.com
+                  {CONTACT.partnershipsEmail}
                 </a>
               </li>
-              <li className="opacity-75">+967 [phone]</li>
+              <li className="opacity-75">{CONTACT.phone}</li>
               <li className="opacity-75 leading-relaxed">
-                [HQ street address],<br />
-                [city], Yemen
+                {CONTACT.hqStreet},
+                <br />
+                {CONTACT.hqCity}, {CONTACT.hqCountry}
               </li>
             </ul>
           </div>
@@ -87,17 +92,17 @@ export default function Footer() {
           {/* Column 4 — Connect */}
           <div className="md:col-span-3">
             <h4 className="caption !text-[var(--color-cream)] !opacity-50 mb-5">
-              Connect
+              {t("connect")}
             </h4>
             <ul className="space-y-3 text-[0.95rem]">
               <li>
                 <a
-                  href="https://www.linkedin.com/"
+                  href={CONTACT.linkedinUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-[var(--color-bronze)]"
                 >
-                  LinkedIn ↗
+                  {t("linkedin")}
                 </a>
               </li>
             </ul>
@@ -105,21 +110,19 @@ export default function Footer() {
         </div>
 
         <div className="mt-20 pt-8 border-t border-[var(--color-cream)]/15 flex flex-col md:flex-row gap-4 md:items-center md:justify-between text-[0.8125rem] opacity-60">
-          <p>© 1993–2026 Alsabahy Group. All rights reserved.</p>
+          <p>{t("copyright")}</p>
           <ul className="flex gap-6">
             <li>
-              <Link href="/privacy" className="hover:text-[var(--color-bronze)]">
-                Privacy
+              <Link
+                href="/privacy"
+                className="hover:text-[var(--color-bronze)]"
+              >
+                {t("privacy")}
               </Link>
             </li>
             <li>
               <Link href="/terms" className="hover:text-[var(--color-bronze)]">
-                Terms
-              </Link>
-            </li>
-            <li>
-              <Link href="/ar" className="hover:text-[var(--color-bronze)]">
-                العربية
+                {t("terms")}
               </Link>
             </li>
           </ul>

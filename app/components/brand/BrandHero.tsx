@@ -23,11 +23,11 @@ export default function BrandHero({ brand }: { brand: Brand }) {
 
       <div className="editorial-wrap relative pt-44 pb-24 md:pt-52 md:pb-28">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 items-end">
-          <div className="md:col-span-7">
+          <div className="md:col-span-8">
             <p className="eyebrow !text-[var(--color-bronze)] mb-8">
               {brand.hero.eyebrow}
             </p>
-            <h1 className="font-[var(--font-display)] text-[3.5rem] sm:text-7xl md:text-[8rem] leading-[0.95] tracking-tight !text-[var(--color-cream)]">
+            <h1 className="font-[var(--font-display)] text-[3.5rem] sm:text-7xl md:text-[5rem] lg:text-[6rem] leading-[0.95] tracking-tight !text-[var(--color-cream)] break-words">
               {brand.displayName ?? brand.name}
             </h1>
             <p className="mt-10 max-w-2xl text-[1.0625rem] md:text-[1.1875rem] leading-[1.65] opacity-85">
@@ -35,7 +35,7 @@ export default function BrandHero({ brand }: { brand: Brand }) {
             </p>
           </div>
 
-          <div className="md:col-span-5">
+          <div className="md:col-span-4">
             <BrandImage
               src={brand.images?.hero}
               alt={brand.hero.heroImageAlt}

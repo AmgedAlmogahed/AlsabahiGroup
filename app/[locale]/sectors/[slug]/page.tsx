@@ -1,20 +1,21 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { notFound } from "next/navigation";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 import FadeIn from "@/app/components/FadeIn";
 import BrandImage from "@/app/components/BrandImage";
 import { SECTORS, getSector } from "@/app/lib/sectors";
-import { BRANDS, getBrand } from "@/app/lib/brands";
+import { getBrand } from "@/app/lib/brands";
 import { SITE_IMAGES } from "@/app/lib/site-images";
 
 const SITE_URL = "https://alsabahygroup.com";
 
-type Params = { slug: string };
+type Params = { slug: string; locale: string };
 
-export function generateStaticParams(): Params[] {
+export function generateStaticParams() {
   return SECTORS.map((s) => ({ slug: s.slug }));
 }
 
@@ -23,16 +24,16 @@ export async function generateMetadata({
 }: {
   params: Promise<Params>;
 }): Promise<Metadata> {
-  const { slug } = await params;
-  const sector = getSector(slug);
+  const { slug, locale } = await params;
+  const sector = getSector(slug, locale);
   if (!sector) return {};
-  const url = `${SITE_URL}/sectors/${slug}`;
+  const url = `${SITE_URL}${locale === "ar" ? "/ar" : ""}/sectors/${slug}`;
   return {
     title: sector.seo.title,
     description: sector.seo.description,
     keywords: sector.seo.keywords,
     alternates: {
-      canonical: `/sectors/${slug}`,
+      canonical: `${locale === "ar" ? "/ar" : ""}/sectors/${slug}`,
       languages: { en: `/sectors/${slug}`, ar: `/ar/sectors/${slug}` },
     },
     openGraph: {
@@ -41,6 +42,7 @@ export async function generateMetadata({
       title: sector.seo.title,
       description: sector.seo.description,
       siteName: "Alsabahy Group",
+      locale: locale === "ar" ? "ar_YE" : "en_US",
     },
   };
 }
@@ -50,12 +52,16 @@ export default async function SectorDetailPage({
 }: {
   params: Promise<Params>;
 }) {
-  const { slug } = await params;
-  const sector = getSector(slug);
+  const { slug, locale } = await params;
+  setRequestLocale(locale);
+  const sector = getSector(slug, locale);
   if (!sector) notFound();
 
+  const c = await getTranslations({ locale, namespace: "common" });
+  const bb = await getTranslations({ locale, namespace: "brandsBlock" });
+
   const sectorBrands = sector.brands.brandSlugs
-    .map((s) => getBrand(s))
+    .map((s) => getBrand(s, locale))
     .filter((b): b is NonNullable<ReturnType<typeof getBrand>> => Boolean(b));
 
   const serviceSchema = {
@@ -81,7 +87,6 @@ export default async function SectorDetailPage({
       />
       <Header />
       <main>
-        {/* A — Hero */}
         <section className="relative bg-[var(--color-navy)] text-[var(--color-cream)] overflow-hidden">
           <div
             className="absolute inset-0 opacity-[0.04]"
@@ -122,7 +127,6 @@ export default async function SectorDetailPage({
           </div>
         </section>
 
-        {/* B — Context */}
         <section className="section bg-[var(--color-cream)]">
           <div className="editorial-wrap">
             <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16">
@@ -142,7 +146,6 @@ export default async function SectorDetailPage({
           </div>
         </section>
 
-        {/* C — Capabilities (6-block grid) */}
         <section className="section bg-[var(--color-offwhite)]">
           <div className="editorial-wrap">
             <FadeIn className="max-w-3xl">
@@ -172,7 +175,6 @@ export default async function SectorDetailPage({
           </div>
         </section>
 
-        {/* D — Brands in this sector */}
         <section className="section bg-[var(--color-cream)]">
           <div className="editorial-wrap">
             <FadeIn className="max-w-3xl">
@@ -190,7 +192,9 @@ export default async function SectorDetailPage({
                     className="group block p-10 border border-[var(--color-divider)] hover:border-[var(--color-navy)] transition-colors h-full"
                   >
                     <p className="caption mb-4">
-                      <span aria-hidden className="mr-2">{b.countryFlag}</span>
+                      <span aria-hidden className="mr-2">
+                        {b.countryFlag}
+                      </span>
                       {b.country}
                     </p>
                     <h3 className="font-[var(--font-display)] text-[2rem] md:text-[2.5rem] leading-[1.05] tracking-tight text-[var(--color-navy)] group-hover:text-[var(--color-bronze)] transition-colors">
@@ -200,7 +204,7 @@ export default async function SectorDetailPage({
                       {b.summary}
                     </p>
                     <span className="mt-8 inline-flex items-center gap-2 link-inline">
-                      Explore the chapter <span className="arrow">→</span>
+                      {bb("exploreChapter")} <span className="arrow">→</span>
                     </span>
                   </Link>
                 </FadeIn>
@@ -209,11 +213,12 @@ export default async function SectorDetailPage({
           </div>
         </section>
 
-        {/* E — Operational stats */}
         <section className="section bg-[var(--color-navy)] text-[var(--color-cream)]">
           <div className="editorial-wrap">
             <FadeIn className="max-w-3xl">
-              <p className="eyebrow !text-[var(--color-bronze)] mb-6">By the numbers</p>
+              <p className="eyebrow !text-[var(--color-bronze)] mb-6">
+                {c("byTheNumbers")}
+              </p>
               <h2 className="text-[2.25rem] md:text-[3rem] leading-[1.05] tracking-tight !text-[var(--color-cream)] max-w-[20ch]">
                 {sector.stats.h2}
               </h2>
@@ -245,7 +250,6 @@ export default async function SectorDetailPage({
           </div>
         </section>
 
-        {/* F — CTA strip */}
         <section className="section bg-[var(--color-cream)]">
           <div className="editorial-wrap">
             <FadeIn className="max-w-4xl">
@@ -258,7 +262,7 @@ export default async function SectorDetailPage({
               </p>
               <div className="mt-12">
                 <Link href="/partner-with-us" className="btn-primary">
-                  Become a Partner <span aria-hidden>→</span>
+                  {c("becomePartner")} <span aria-hidden>→</span>
                 </Link>
               </div>
             </FadeIn>

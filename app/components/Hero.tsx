@@ -1,16 +1,26 @@
-import Link from "next/link";
-
-const STATS = [
-  { value: "1993", label: "Established" },
-  { value: "5", label: "International brands" },
-  { value: "[X]", label: "Governorates served" },
-  { value: "[X]", label: "Retail & pharmacy points" },
-];
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
+import { OPERATIONS } from "@/app/lib/operations";
 
 export default function Hero() {
+  const t = useTranslations("hero");
+  const c = useTranslations("common");
+
+  const stats = [
+    { value: OPERATIONS.foundingYear, label: t("stats.established") },
+    {
+      value: String(OPERATIONS.internationalBrands),
+      label: t("stats.internationalBrands"),
+    },
+    { value: OPERATIONS.governorates, label: t("stats.governorates") },
+    {
+      value: OPERATIONS.retailAndPharmacyPoints,
+      label: t("stats.retailPoints"),
+    },
+  ];
+
   return (
     <section className="relative bg-[var(--color-navy)] text-[var(--color-cream)] overflow-hidden">
-      {/* Editorial still — single image, no video, no parallax per spec §What changes */}
       <div
         className="absolute inset-0 opacity-[0.18] mix-blend-screen"
         aria-hidden="true"
@@ -31,19 +41,18 @@ export default function Hero() {
 
       <div className="editorial-wrap relative pt-44 pb-24 md:pt-56 md:pb-32">
         <p className="eyebrow !text-[var(--color-bronze)] mb-8">
-          Authorized Agent in Yemen · Since 1993
+          {t("eyebrow")}
         </p>
 
         <h1 className="font-[var(--font-display)] text-[2.75rem] sm:text-6xl md:text-[5.25rem] leading-[1.02] tracking-tight max-w-[18ch] text-[var(--color-cream)]">
-          Bringing the world's most trusted brands to{" "}
-          <span className="italic text-[var(--color-bronze-soft)]">Yemen.</span>
+          {t("title")}{" "}
+          <span className="italic text-[var(--color-bronze-soft)]">
+            {t("titleItalic")}
+          </span>
         </h1>
 
         <p className="mt-10 max-w-2xl text-[1.0625rem] md:text-[1.1875rem] leading-[1.65] opacity-85">
-          For over three decades, Alsabahy Group has served as the authorized
-          agent (وكيل) for premium international names in pharmaceuticals and
-          confectionery — bridging global manufacturers with Yemen's
-          pharmacies, retailers, and consumers.
+          {t("body")}
         </p>
 
         <div className="mt-12 flex flex-wrap gap-4">
@@ -51,26 +60,25 @@ export default function Hero() {
             href="/brands"
             className="btn-primary !bg-[var(--color-cream)] !text-[var(--color-navy)] hover:!bg-[var(--color-bronze)] hover:!text-[var(--color-navy)]"
           >
-            View Our Brand Portfolio
+            {c("viewPortfolio")}
             <span aria-hidden>→</span>
           </Link>
           <Link
             href="/partner-with-us"
             className="btn-secondary !text-[var(--color-cream)] !border-[var(--color-cream)]/60 hover:!bg-[var(--color-cream)] hover:!text-[var(--color-navy)]"
           >
-            Become a Partner
+            {c("becomePartner")}
           </Link>
         </div>
       </div>
 
-      {/* Trust strip — 4 inline stats per spec §Hero */}
       <div className="editorial-wrap relative border-t border-[var(--color-cream)]/15">
         <ul className="grid grid-cols-2 md:grid-cols-4">
-          {STATS.map((s, i) => (
+          {stats.map((s, i) => (
             <li
               key={s.label}
               className={`py-8 md:py-10 ${
-                i !== STATS.length - 1
+                i !== stats.length - 1
                   ? "md:border-r border-[var(--color-cream)]/15"
                   : ""
               } ${i % 2 === 0 ? "border-r md:border-r" : ""} ${

@@ -3,28 +3,25 @@
 /**
  * Form server actions.
  *
- * Email delivery is intentionally STUBBED for v1 — wire to Resend / Formspree /
- * HubSpot when the client provides API credentials.
- *
- * To go live: replace the `// TODO: send email` block in each action with a
- * single call to your provider, e.g.:
- *
- *   await resend.emails.send({
- *     from: "noreply@alsabahygroup.com",
- *     to: CONTACT.partnershipsEmail,
- *     subject: `Partnership enquiry — ${data.brand}`,
- *     html: renderTemplate(data),
- *   });
- *
- * Submissions currently log to server stdout for visibility during dev.
+ * Returns a status `code` instead of an English message so the client
+ * component can render the localized version. See messages/{en,ar}.json
+ * `form.contact.messages` and `form.partner.messages`.
  */
+
+export type FormCode =
+  | "success"
+  | "missing_fields"
+  | "invalid_email"
+  | "message_too_long"
+  | "consent_required"
+  | "";
 
 export type FormState = {
   ok: boolean;
-  message: string;
+  code: FormCode;
 };
 
-const initial: FormState = { ok: false, message: "" };
+const initial: FormState = { ok: false, code: "" };
 
 function isFilledHoneypot(formData: FormData): boolean {
   const honey = formData.get("company_url");
@@ -37,7 +34,6 @@ function getString(formData: FormData, key: string): string {
 }
 
 function isValidEmail(email: string): boolean {
-  // Pragmatic regex — strict enough to catch typos, lenient enough to not reject valid addresses.
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
@@ -46,28 +42,35 @@ export async function submitPartnerForm(
   formData: FormData,
 ): Promise<FormState> {
   if (isFilledHoneypot(formData)) {
-    // Silent success — don't tell the bot anything useful.
-    return { ok: true, message: "Thank you. Our partnerships team will be in touch within 2 business days." };
+    return { ok: true, code: "success" };
   }
 
-  const required = ["fullName", "company", "country", "brand", "sector", "presence", "message", "email"];
+  const required = [
+    "fullName",
+    "company",
+    "country",
+    "brand",
+    "sector",
+    "presence",
+    "message",
+    "email",
+  ];
   for (const key of required) {
     if (!getString(formData, key)) {
-      return { ok: false, message: `Please fill in all required fields.` };
+      return { ok: false, code: "missing_fields" };
     }
   }
 
   const email = getString(formData, "email");
   if (!isValidEmail(email)) {
-    return { ok: false, message: "Please enter a valid email address." };
+    return { ok: false, code: "invalid_email" };
   }
 
   const message = getString(formData, "message");
   if (message.length > 1000) {
-    return { ok: false, message: "Message must be 1000 characters or fewer." };
+    return { ok: false, code: "message_too_long" };
   }
 
-  // TODO: send email — see comment block at top of file.
   console.log("[partner-form]", {
     fullName: getString(formData, "fullName"),
     company: getString(formData, "company"),
@@ -82,10 +85,7 @@ export async function submitPartnerForm(
     message,
   });
 
-  return {
-    ok: true,
-    message: "Thank you. Our partnerships team will be in touch within 2 business days.",
-  };
+  return { ok: true, code: "success" };
 }
 
 export async function submitContactForm(
@@ -93,22 +93,21 @@ export async function submitContactForm(
   formData: FormData,
 ): Promise<FormState> {
   if (isFilledHoneypot(formData)) {
-    return { ok: true, message: "Thank you. We'll be in touch within 2 business days." };
+    return { ok: true, code: "success" };
   }
 
   const required = ["fullName", "country", "reason", "email", "message"];
   for (const key of required) {
     if (!getString(formData, key)) {
-      return { ok: false, message: "Please fill in all required fields." };
+      return { ok: false, code: "missing_fields" };
     }
   }
 
   const email = getString(formData, "email");
   if (!isValidEmail(email)) {
-    return { ok: false, message: "Please enter a valid email address." };
+    return { ok: false, code: "invalid_email" };
   }
 
-  // TODO: send email — see comment block at top of file.
   console.log("[contact-form]", {
     fullName: getString(formData, "fullName"),
     company: getString(formData, "company"),
@@ -118,10 +117,7 @@ export async function submitContactForm(
     message: getString(formData, "message"),
   });
 
-  return {
-    ok: true,
-    message: "Thank you. We'll be in touch within 2 business days.",
-  };
+  return { ok: true, code: "success" };
 }
 
 export const initialFormState = initial;

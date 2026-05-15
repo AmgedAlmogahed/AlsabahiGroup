@@ -1,0 +1,393 @@
+{
+  "header": {
+    "homeAriaLabel": "Alsabahy Group — Home",
+    "primaryNavAriaLabel": "Primary",
+    "nav": {
+      "about": "About",
+      "sectors": "Sectors",
+      "brands": "Brands",
+      "partner": "Partner With Us",
+      "contact": "Contact"
+    },
+    "languageToggleLabel": "العربية",
+    "languageToggleShort": "ع"
+  },
+  "footer": {
+    "tagline": "Yemen's authorized agent for the world's most trusted brands. Since 1993.",
+    "navigate": "Navigate",
+    "contact": "Contact",
+    "connect": "Connect",
+    "linkedin": "LinkedIn ↗",
+    "copyright": "© 1993–2026 Alsabahy Group. All rights reserved.",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "language": "English"
+  },
+  "common": {
+    "becomePartner": "Become a Partner",
+    "viewPortfolio": "View Our Brand Portfolio",
+    "explorePortfolio": "Explore Our Portfolio",
+    "learnMore": "Learn how we work",
+    "seeFullPortfolio": "See the full portfolio",
+    "fullDistributionCapabilities": "See our full distribution capabilities",
+    "byTheNumbers": "By the numbers"
+  },
+  "hero": {
+    "eyebrow": "Authorized Agent in Yemen · Since 1993",
+    "title": "Bringing the world's most trusted brands to",
+    "titleItalic": "Yemen.",
+    "body": "For over three decades, Alsabahy Group has served as the authorized agent (وكيل) for premium international names in pharmaceuticals and confectionery — bridging global manufacturers with Yemen's pharmacies, retailers, and consumers.",
+    "stats": {
+      "established": "Established",
+      "internationalBrands": "International brands",
+      "governorates": "Governorates served",
+      "retailPoints": "Retail & pharmacy points"
+    }
+  },
+  "role": {
+    "eyebrow": "The role we play",
+    "title": "We are the bridge between global brands and the Yemeni market.",
+    "imageAlt": "Pharmacist arranging branded products on a shelf in a Sana'a pharmacy. Natural light, hands in frame, packaging detail.",
+    "body1": "Being an authorized agent (وكيل) is more than logistics. It is the responsibility of safeguarding a brand's reputation, regulatory standing, and consumer trust in a market where Alsabahy has spent more than 30 years building infrastructure and relationships.",
+    "body2": "We handle every step in the chain — import licensing, customs clearance, Ministry of Health registration, cold-chain handling, warehousing, nationwide distribution, retailer education, and after-market support. Brand owners send us their products. We make sure those products reach the right shelves, in the right condition, in front of the right consumers."
+  },
+  "sectorsBlock": {
+    "eyebrow": "Sectors",
+    "title": "Two sectors. Deep expertise in each.",
+    "body": "We focus exclusively on categories where Yemen's regulatory and distribution environment rewards experienced agents.",
+    "pharma": {
+      "eyebrow": "Pharmaceuticals",
+      "h3": "Regulated. Cold-chain ready. Pharmacy-connected.",
+      "body": "We distribute pharmaceutical and health products from European and international manufacturers across Yemen's hospital networks, pharmacy chains, and independent dispensaries — under full Ministry of Health registration and cold-chain protocols where required.",
+      "ctaLabel": "Explore Pharmaceuticals",
+      "photoCaption": "Cold-chain pharmaceutical packaging — close-up of regulated product label and box detail."
+    },
+    "confectionery": {
+      "eyebrow": "Confectionery",
+      "h3": "Premium taste. Trusted shelves.",
+      "body": "We bring international confectionery brands to Yemen's supermarkets, kiosks, and traditional retail channels — managing import, in-market branding, retail merchandising, and the day-to-day relationships that keep shelves stocked.",
+      "ctaLabel": "Explore Confectionery",
+      "photoCaption": "Confectionery packaging arranged on a Yemeni supermarket shelf — warm tones, natural retail light."
+    }
+  },
+  "brandsBlock": {
+    "eyebrow": "The brands we represent",
+    "title": "The brands we represent in Yemen.",
+    "body": "Five international names. Two sectors. One trusted gateway. Each is a long-standing partnership — and each has its own chapter on this site.",
+    "since": "Since",
+    "authorisedAgentSince": "Authorised agent since {year}",
+    "exploreChapter": "Explore the chapter"
+  },
+  "sectorName": {
+    "Pharmaceuticals": "Pharmaceuticals",
+    "Confectionery": "Confectionery"
+  },
+  "operations": {
+    "eyebrow": "How we operate",
+    "title": "From port to pharmacy — we control every link.",
+    "body": "Distribution is only as strong as its weakest point. We've built infrastructure across Yemen to make sure no shipment, no shelf, and no compliance step is left to chance.",
+    "stats": {
+      "governorates": "Governorates served",
+      "retailPoints": "Retail & pharmacy points",
+      "warehouses": "Regional warehouses",
+      "fleet": "Vehicles in fleet",
+      "years": "Years of operation"
+    },
+    "capabilities": {
+      "importCustoms": {
+        "eyebrow": "01 — Import & customs",
+        "title": "Import & customs",
+        "body": "Full handling of import licensing, customs clearance, and regulatory documentation. Our team manages every shipment from port of origin to bonded warehouse without disruption."
+      },
+      "mohRegistration": {
+        "eyebrow": "02 — MOH registration",
+        "title": "MOH registration",
+        "body": "Pharmaceutical product registration with Yemen's Ministry of Health, including dossier preparation, renewals, and ongoing compliance reporting on behalf of our brand partners."
+      },
+      "coldChain": {
+        "eyebrow": "03 — Cold-chain logistics",
+        "title": "Cold-chain logistics",
+        "body": "Temperature-controlled warehousing and last-mile delivery for sensitive pharmaceutical and food products. Every link audited. Every batch traceable."
+      },
+      "distribution": {
+        "eyebrow": "04 — Nationwide distribution",
+        "title": "Nationwide distribution",
+        "body": "Direct relationships with pharmacy chains, hospital networks, supermarkets, and traditional retail across {count} governorates — built over three decades."
+      }
+    }
+  },
+  "why": {
+    "eyebrow": "Why Alsabahy",
+    "title": "Why international brands choose Alsabahy.",
+    "pillar1": {
+      "eyebrow": "Pillar 01",
+      "title": "Three decades of operating",
+      "body": "Yemen is a market built on trust and long-standing relationships. We've spent more than 30 years building both. Our retail and pharmacy networks know us, our regulators know us, and our brand partners stay with us."
+    },
+    "pillar2": {
+      "eyebrow": "Pillar 02",
+      "title": "Regulatory rigor",
+      "body": "Every product we represent passes through formal customs and Ministry of Health workflows, with documented compliance for each shipment. We protect our partners' regulatory standing before, during, and after launch."
+    },
+    "pillar3": {
+      "eyebrow": "Pillar 03",
+      "title": "Single point of accountability",
+      "body": "One agent. One contract. One regional team. Brands work with a single counterpart who owns every aspect of their performance in Yemen — from import to shelf to consumer feedback."
+    }
+  },
+  "closer": {
+    "eyebrow": "The invitation",
+    "title": "Bring your brand to",
+    "titleItalic": "Yemen.",
+    "body": "If you're an international brand owner considering Yemen as your next market, let's start the conversation. We respond within 2 business days.",
+    "quote": "A market is only as accessible as the partner who opens it for you."
+  },
+  "brand": {
+    "gallery": {
+      "eyebrow": "Product gallery",
+      "filterAriaLabel": "Product category filter",
+      "noProducts": "No products in this category.",
+      "notePrefix": "Note:",
+      "productImageAlt": "{name} — product photography on neutral background, packaging detail in focus."
+    },
+    "inYemen": {
+      "contextImageAlt": "{brand} on a Yemeni retail shelf — pharmacist or shopkeeper hand placing product, natural light, in-context shot."
+    },
+    "continue": {
+      "eyebrow": "Continue the journey",
+      "title": "Continue the journey.",
+      "ctaTitle": "Want to discuss a similar partnership?",
+      "allBrandsEyebrow": "All brands",
+      "allBrandsTitle": "See all brands"
+    }
+  },
+  "brandsIndex": {
+    "metaTitle": "Our Brand Portfolio | International Brands in Yemen | Alsabahy",
+    "metaDescription": "Alsabahy Group's portfolio of 5 international brands in Yemen — Lýsi, Esseti Farmaceutici, CandyLand, Camel, and Misbis. Pharmaceutical and confectionery distribution.",
+    "heroEyebrow": "The Portfolio",
+    "heroTitle": "The brands we represent in",
+    "heroTitleItalic": "Yemen.",
+    "heroBody": "Five international brands across two sectors. Each one a long-standing partnership — and each one with its own chapter.",
+    "filterLabel": "Filter",
+    "filterAll": "All",
+    "filterPharma": "Pharmaceuticals",
+    "filterConfectionery": "Confectionery",
+    "noBrands": "No brands in this sector.",
+    "closingEyebrow": "Looking to be the next?",
+    "closingTitle": "Add your brand to the portfolio.",
+    "closingBody": "If you're an international pharmaceutical or confectionery brand evaluating Yemen, let's start the conversation."
+  },
+  "sectorsIndex": {
+    "metaTitle": "Sectors | Pharmaceuticals & Confectionery in Yemen | Alsabahy",
+    "metaDescription": "Alsabahy Group operates in two sectors: pharmaceuticals and confectionery. Authorised distribution and Ministry of Health registration across Yemen since 1993.",
+    "heroEyebrow": "The Categories We Serve",
+    "heroTitle": "Two sectors.",
+    "heroTitleItalic": "Deep expertise in each.",
+    "heroBody": "We focus exclusively on categories where Yemen's regulatory and distribution environment rewards experienced agents. Pharmaceuticals and confectionery are different categories, but both reward the same things: regulatory discipline, distribution depth, and decades of operating presence.",
+    "sectorLabel": "Sector",
+    "pharmaContext": "Pharmaceutical and health products from European and international manufacturers, distributed under full Ministry of Health registration to Yemen's hospital networks, pharmacy chains, and independent dispensaries.",
+    "confectioneryContext": "International confectionery and snack brands distributed across Yemen's supermarkets, hypermarkets, kiosks, traditional retail, and wholesale channels — managed end-to-end from import to merchandising.",
+    "brandsInSector": "In this sector",
+    "enterSector": "Enter {name}",
+    "disciplineEyebrow": "The Discipline",
+    "disciplineTitle": "Why we don't distribute everything.",
+    "disciplineBody1": "Distribution is a discipline that doesn't reward generalists. Every category demands its own regulatory pathway, retail channel mix, cold-chain protocol, and trade relationship. We made an early choice to concentrate on two — and to build deeper infrastructure in each rather than spread thin across many.",
+    "disciplineBody2": "That focus is what allows us to register pharmaceuticals with the Ministry of Health on rigorous timelines, and to keep confectionery on Yemeni shelves week after week without supply gaps. Brands working with us inherit the depth of that specialisation."
+  },
+  "about": {
+    "metaTitle": "About Alsabahy Group | Yemen's Authorised Agent Since 1993",
+    "metaDescription": "Alsabahy Group has served as Yemen's authorised agent (وكيل) for premium international brands since 1993. Three decades of unbroken pharmaceutical and confectionery distribution.",
+    "heroEyebrow": "Alsabahy Group · Since 1993",
+    "heroTitle": "A promise made in",
+    "heroTitleItalic": "1993.",
+    "heroBody": "Three decades of operating as Yemen's authorised agent (وكيل) for premium international brands in pharmaceuticals and confectionery — built one partnership at a time.",
+    "chapter1Eyebrow": "Chapter 01",
+    "chapter1Title": "Beginning in Yemen, in 1993.",
+    "chapter1Body1": "Alsabahy Group was founded in 1993 with one ambition: to bring trusted international brands to Yemen, and to represent those brands in-country with the same standard of care their home markets expected. The model was simple — and it remains the model today. We are an authorised agent (وكيل). We don't manufacture. We don't private-label. We represent.",
+    "chapter1Body2": "Yemen in 1993 was a market in flux, with formal import and pharmaceutical distribution still maturing. The founders saw what most overlooked: a young, fast-growing consumer base of more than 15 million people, regulated channels stabilising, and an opening for a distributor who could combine European-grade compliance with locally-rooted retail relationships. We started with a small portfolio, a single warehouse, and a long view.",
+    "chapter1Body3": "Thirty-plus years later, we represent international brands across two regulated sectors, operate regional warehouses with cold-chain capacity, and reach pharmacies and retailers across most of Yemen's governorates. The portfolio grew. The discipline didn't change.",
+    "chapter2Eyebrow": "Chapter 02",
+    "chapter2Title": "From a single warehouse to a national network.",
+    "timelineNote": "Note: final dates and milestones to be confirmed with Alsabahy.",
+    "timeline": [
+      { "year": "1993", "text": "Founded. Authorised distribution begins in Yemen." },
+      { "year": "[year]", "text": "First international pharmaceutical brand partnership." },
+      { "year": "[year]", "text": "First international confectionery brand partnership." },
+      { "year": "[year]", "text": "Regional warehouse network expands beyond [city]." },
+      { "year": "[year]", "text": "Cold-chain logistics capacity established." },
+      { "year": "[year]", "text": "Ministry of Health registration capability formalised." },
+      { "year": "[year]", "text": "Partnership with Lýsi (Iceland) begins.", "brandSlug": "lysi" },
+      { "year": "[year]", "text": "Partnership with Esseti Farmaceutici (Italy) begins.", "brandSlug": "esseti-farmaceutici" },
+      { "year": "[year]", "text": "Confectionery portfolio expands to multi-brand coverage." },
+      { "year": "Today", "text": "5 international brands, 2 sectors, distribution across {count} governorates." }
+    ],
+    "chapter3Eyebrow": "Chapter 03",
+    "chapter3Title": "Where we're going.",
+    "visionLabel": "Vision",
+    "visionTitle": "A leading regional partner.",
+    "visionBody": "To become the most trusted authorised agent in the region for international pharmaceutical and confectionery brands seeking entry to Yemen and surrounding markets — built on unbroken operating continuity, regulatory rigour, and partnership longevity.",
+    "missionLabel": "Mission",
+    "missionTitle": "What we do, every day.",
+    "missionBody": "To deliver high-quality international products to Yemeni consumers while adhering to the highest health, safety, and regulatory standards — and to protect the brand integrity of every partner we represent, at every step from import to shelf.",
+    "chapter4Eyebrow": "Chapter 04",
+    "chapter4Title": "The five things we don't compromise on.",
+    "values": [
+      { "number": "01", "name": "Quality", "heading": "Quality is the contract.", "body": "Every product we represent meets the manufacturing and regulatory standards of its home market — and every shipment we handle reflects that standard from port to pharmacy. Quality isn't a marketing claim. It's the contract we sign with our partners and consumers." },
+      { "number": "02", "name": "Trust", "heading": "Trust is the only currency that compounds.", "body": "Trust between us and our brand partners. Trust between us and our retailers. Trust between our products and the Yemeni consumers who rely on them. Trust is slow to earn, fast to lose, and the only foundation on which decades of operation can be built." },
+      { "number": "03", "name": "Innovation", "heading": "Continuous adaptation, not constant change.", "body": "Distribution disciplines evolve. Regulatory pathways evolve. Retail channels evolve. We adapt to all of it — without abandoning the operating principles that have served us for thirty years." },
+      { "number": "04", "name": "Responsibility", "heading": "Accountable to consumers, partners, and regulators.", "body": "The products we distribute reach pharmacies, hospitals, and families. That responsibility informs every operational decision — from cold-chain protocols to retail merchandising to compliance documentation." },
+      { "number": "05", "name": "Customer Satisfaction", "heading": "Every retailer, every consumer, every brand.", "body": "Our customers include the pharmacies and supermarkets we supply, the international brand owners we represent, and the Yemeni consumers who choose our products. We earn the relationship with each of them, every day." }
+    ],
+    "closingEyebrow": "For International Brands",
+    "closingTitle": "Ready to be the next chapter?",
+    "closingBody": "If you're an international brand evaluating Yemen as a market, let's start the conversation."
+  },
+  "partner": {
+    "metaTitle": "Partner With Us | Yemen Brand Distribution | Alsabahy Group",
+    "metaDescription": "Bring your brand to Yemen with Alsabahy Group — authorized agent expertise, nationwide distribution, MOH registration since 1993. Start the partnership conversation.",
+    "heroEyebrow": "For International Brand Owners",
+    "heroTitle": "Bring your brand to",
+    "heroTitleItalic": "Yemen.",
+    "heroBody": "Alsabahy Group works with international brand owners looking for an authorized agent (وكيل) in Yemen. If that's you, this is where the conversation begins.",
+    "heroCta": "Start the conversation",
+    "marketEyebrow": "The Market",
+    "marketTitle": "A market larger than most realise.",
+    "marketBody1": "Yemen is one of the Arab world's most populous countries, with a consumer base exceeding 30 million people across more than 20 governorates. Despite the headlines, demand for international pharmaceutical and consumer-goods brands has remained constant — and in many categories, has grown.",
+    "marketBody2": "What changes is the type of partner international brands need to reach this market: one with the regulatory experience, distribution depth, and on-ground continuity to operate where many cannot. That is the role Alsabahy Group has played since 1993.",
+    "marketPullQuote": "We don't promise the easiest market. We promise the most reliable partner inside it.",
+    "partnerEyebrow": "The Partner",
+    "partnerTitle": "Three reasons international brands choose Alsabahy.",
+    "pillarLabel": "Pillar",
+    "pillars": [
+      { "title": "Three decades of unbroken operation", "body": "30+ years in Yemen means our retail and pharmacy networks, our regulatory channels, and our trade relationships are continuous. We've operated through every market condition the country has seen. Brands working with us inherit those relationships from day one." },
+      { "title": "Single point of accountability", "body": "One agent. One contract. One regional team. International brand owners work with a single counterpart who owns every aspect of their performance in Yemen — import, registration, warehousing, distribution, retail merchandising, and after-market support." },
+      { "title": "Sector specialisation", "body": "We focus deliberately on pharmaceuticals and confectionery. Two sectors. Deep infrastructure in each. We don't dilute our operation by distributing categories where we can't lead." }
+    ],
+    "infrastructureEyebrow": "The Infrastructure",
+    "infrastructureTitle": "From port to pharmacy — we control every link.",
+    "infrastructureBody": "A distribution agreement is only as good as the operational chain behind it. We've built ours over three decades, link by link.",
+    "opsStats": {
+      "governorates": "Governorates served",
+      "retailPoints": "Retail & pharmacy points",
+      "warehouses": "Regional warehouses",
+      "fleet": "Vehicles in fleet",
+      "years": "Years of unbroken operation"
+    },
+    "capabilities": [
+      { "title": "Import & customs", "body": "Full handling of import licensing, customs clearance, and shipping documentation. Our team manages every shipment from port of origin to bonded warehouse without disruption — including for cold-chain and controlled substances." },
+      { "title": "Ministry of Health registration", "body": "Pharmaceutical product registration with Yemen's Ministry of Health, including dossier preparation, regulatory submissions, renewals, and ongoing compliance reporting on behalf of our brand partners." },
+      { "title": "Cold-chain logistics", "body": "Temperature-controlled warehousing and last-mile delivery for pharmaceutical and sensitive food products. Every link audited. Every batch traceable. Documentation maintained to international audit standards." },
+      { "title": "Nationwide distribution", "body": "Direct, named relationships with pharmacy chains, hospital networks, supermarkets, hypermarkets, wholesalers, and traditional retail across {count} governorates — built and maintained over more than three decades." }
+    ],
+    "complianceEyebrow": "The Compliance",
+    "complianceTitle": "Compliance is non-negotiable.",
+    "complianceBody": "Every product we represent passes through formal customs and Ministry of Health workflows, with documented compliance for each shipment. We maintain active Marketing Authorisation Holder (MAH) relationships for pharmaceutical products and full customs and import documentation for consumer goods. Our compliance posture protects our partners' regulatory standing before, during, and after launch.",
+    "complianceListLabel": "What we hold",
+    "complianceItems": [
+      "Ministry of Health (Yemen) — pharmaceutical product registration capability",
+      "Customs and import licensing for pharmaceuticals and consumer goods",
+      "Standards-compliant warehousing across multiple regional locations",
+      "Cold-chain operating procedures aligned to international pharmaceutical and food-grade standards",
+      "Documented audit trail for every shipment, lot, and registration renewal"
+    ],
+    "processEyebrow": "The Process",
+    "processTitle": "How partnership works.",
+    "steps": [
+      { "title": "Inquiry", "body": "You submit the form below. Within 2 business days, our partnerships team reviews your brand, category, and current Yemen presence (if any), and responds with initial fit assessment and next steps." },
+      { "title": "Discovery & NDA", "body": "We sign a mutual NDA. We share Yemen-specific commercial, regulatory, and competitive context for your category. You share your brand strategy, target product range, and any existing market presence in the region." },
+      { "title": "Commercial proposal", "body": "We propose a distribution structure tailored to your brand: exclusivity terms, commercial pricing, marketing and trade support, regulatory timeline, and a phased launch plan with clear milestones." },
+      { "title": "Agreement and launch", "body": "We sign a formal distribution agreement. Import licensing, Ministry of Health registration (where applicable), and first-shipment planning begin. Typical first-product-to-shelf timeline: 4–8 months, depending on category and regulatory pathway." }
+    ],
+    "formEyebrow": "Begin Here",
+    "formTitle": "Begin the conversation.",
+    "formBody": "We respond within 2 business days. Conversations stay confidential whether or not a partnership results.",
+    "directContactLabel": "Or contact us directly",
+    "phoneLabel": "Phone",
+    "whatsappLabel": "WhatsApp Business"
+  },
+  "contactPage": {
+    "metaTitle": "Contact Alsabahy Group | Yemen Brand Distribution Office",
+    "metaDescription": "Contact Alsabahy Group — Yemen's authorised agent since 1993. Headquarters, partnership enquiries, official email, and direct line. We respond within 2 business days.",
+    "heroEyebrow": "Contact",
+    "heroTitle": "Get in",
+    "heroTitleItalic": "touch.",
+    "heroBody": "Partnership enquiries, brand discussions, supplier conversations, press requests — every message reaches the right person.",
+    "formTitle": "Send us a message.",
+    "directTitle": "Or reach us directly.",
+    "blocks": {
+      "partnerships": { "title": "Brand partnerships", "body": "The fastest path for international brand owners. Reviewed daily by our partnerships team." },
+      "general": { "title": "General enquiries", "body": "For all other enquiries — vendors, press, prospective hires, and general questions." },
+      "phone": { "title": "Phone" },
+      "whatsapp": { "title": "WhatsApp Business", "body": "For brand owners outside business hours." },
+      "hq": { "title": "Headquarters" },
+      "linkedin": { "title": "LinkedIn", "label": "linkedin.com/company/[handle] ↗" }
+    },
+    "ndaNote": "We treat every enquiry confidentially. Brand partnership discussions are covered by mutual NDA from initial contact onward."
+  },
+  "form": {
+    "selectPlaceholder": "Select…",
+    "messages": {
+      "missing_fields": "Please fill in all required fields.",
+      "invalid_email": "Please enter a valid email address.",
+      "message_too_long": "Message must be 1000 characters or fewer.",
+      "consent_required": "Please confirm consent to proceed."
+    },
+    "contact": {
+      "successLabel": "Sent",
+      "successMessage": "Thank you. We'll be in touch within 2 business days.",
+      "fullName": "Full name",
+      "company": "Company (optional)",
+      "country": "Country",
+      "reason": "Reason for contact",
+      "email": "Email",
+      "message": "Message",
+      "submit": "Send message",
+      "submitting": "Sending…",
+      "reasons": {
+        "partnership": "Brand partnership enquiry",
+        "supplier": "Supplier or vendor enquiry",
+        "press": "Press / media",
+        "general": "General enquiry",
+        "other": "Other"
+      }
+    },
+    "partner": {
+      "successLabel": "Submitted",
+      "successMessage": "Thank you. Our partnerships team will be in touch within 2 business days.",
+      "successFollowUp": "In the meantime, you can read more about our",
+      "successFollowUpLink": "brand portfolio",
+      "fullName": "Full name",
+      "company": "Company",
+      "role": "Role / Title",
+      "country": "Country",
+      "brand": "Brand name",
+      "sector": "Sector",
+      "annualVolume": "Annual export volume (optional)",
+      "email": "Email",
+      "phone": "Phone (with country code)",
+      "presence": "Existing Yemen presence?",
+      "message": "Message",
+      "messageMax": "Max 1000 characters",
+      "submit": "Begin the conversation",
+      "submitting": "Sending…",
+      "privacyNote": "Your information stays with Alsabahy Group's partnerships team. We do not share enquiry details with third parties.",
+      "sectorOptions": {
+        "Pharmaceuticals": "Pharmaceuticals",
+        "Confectionery": "Confectionery",
+        "Other": "Other"
+      },
+      "volumeOptions": {
+        "<100k": "Under $100K",
+        "100k-1m": "$100K – $1M",
+        "1m-5m": "$1M – $5M",
+        "5m+": "$5M+"
+      },
+      "presenceOptions": {
+        "none": "None",
+        "importing": "Importing",
+        "active": "Active distribution",
+        "other": "Other"
+      }
+    }
+  }
+}

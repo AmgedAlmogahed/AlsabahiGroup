@@ -1,30 +1,34 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 import FadeIn from "@/app/components/FadeIn";
 import BrandImage from "@/app/components/BrandImage";
-import { BRANDS } from "@/app/lib/brands";
+import { BRANDS, getBrands } from "@/app/lib/brands";
 
 const SITE_URL = "https://alsabahygroup.com";
 
-export const metadata: Metadata = {
-  title: "Our Brand Portfolio | International Brands in Yemen | Alsabahy",
-  description:
-    "Alsabahy Group's portfolio of 5 international brands in Yemen — Lýsi, Esseti Farmaceutici, CandyLand, Camel, and Misbis. Pharmaceutical and confectionery distribution.",
-  keywords: [
-    "Yemen brand portfolio",
-    "international brands Yemen",
-    "Lýsi Yemen distributor",
-    "CandyLand Yemen",
-    "Yemen authorised distributor list",
-  ],
-  alternates: {
-    canonical: "/brands",
-    languages: { en: "/brands", ar: "/ar/brands" },
-  },
-};
+type Params = { locale: string };
+type SearchParams = { sector?: string };
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<Params>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "brandsIndex" });
+  return {
+    title: t("metaTitle"),
+    description: t("metaDescription"),
+    alternates: {
+      canonical: locale === "ar" ? "/ar/brands" : "/brands",
+      languages: { en: "/brands", ar: "/ar/brands" },
+    },
+  };
+}
 
 const collectionSchema = {
   "@context": "https://schema.org",
@@ -51,34 +55,47 @@ const breadcrumbSchema = {
   "@type": "BreadcrumbList",
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
-    { "@type": "ListItem", position: 2, name: "Brands", item: `${SITE_URL}/brands` },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Brands",
+      item: `${SITE_URL}/brands`,
+    },
   ],
 };
 
-type SearchParams = { sector?: string };
-
-const FILTERS = [
-  { label: "All", value: "all" },
-  { label: "Pharmaceuticals", value: "pharmaceuticals" },
-  { label: "Confectionery", value: "confectionery" },
-];
-
 export default async function BrandsIndexPage({
+  params,
   searchParams,
 }: {
+  params: Promise<Params>;
   searchParams: Promise<SearchParams>;
 }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   const { sector } = await searchParams;
-  const activeFilter = sector === "pharmaceuticals" || sector === "confectionery" ? sector : "all";
+  const t = await getTranslations({ locale, namespace: "brandsIndex" });
+  const bb = await getTranslations({ locale, namespace: "brandsBlock" });
+  const c = await getTranslations({ locale, namespace: "common" });
 
+  const activeFilter =
+    sector === "pharmaceuticals" || sector === "confectionery" ? sector : "all";
+
+  const brands = getBrands(locale);
   const filtered =
     activeFilter === "all"
-      ? BRANDS
-      : BRANDS.filter((b) =>
+      ? brands
+      : brands.filter((b) =>
           activeFilter === "pharmaceuticals"
             ? b.sector === "Pharmaceuticals"
             : b.sector === "Confectionery",
         );
+
+  const filters = [
+    { label: t("filterAll"), value: "all" },
+    { label: t("filterPharma"), value: "pharmaceuticals" },
+    { label: t("filterConfectionery"), value: "confectionery" },
+  ];
 
   return (
     <>
@@ -92,7 +109,6 @@ export default async function BrandsIndexPage({
       />
       <Header />
       <main>
-        {/* 1 — Hero */}
         <section className="relative bg-[var(--color-navy)] text-[var(--color-cream)] overflow-hidden">
           <div
             className="absolute inset-0 opacity-[0.04]"
@@ -105,29 +121,28 @@ export default async function BrandsIndexPage({
           />
           <div className="editorial-wrap relative pt-44 pb-24 md:pt-52 md:pb-28">
             <p className="eyebrow !text-[var(--color-bronze)] mb-8">
-              The Portfolio
+              {t("heroEyebrow")}
             </p>
             <h1 className="font-[var(--font-display)] text-[2.75rem] sm:text-6xl md:text-[5.5rem] leading-[1.02] tracking-tight max-w-[18ch] !text-[var(--color-cream)]">
-              The brands we represent in{" "}
+              {t("heroTitle")}{" "}
               <span className="italic text-[var(--color-bronze-soft)]">
-                Yemen.
+                {t("heroTitleItalic")}
               </span>
             </h1>
             <p className="mt-10 max-w-2xl text-[1.0625rem] md:text-[1.1875rem] leading-[1.65] opacity-85">
-              Five international brands across two sectors. Each one a
-              long-standing partnership — and each one with its own chapter.
+              {t("heroBody")}
             </p>
           </div>
         </section>
 
-        {/* 2 — Filter */}
         <section className="bg-[var(--color-cream)] border-b border-[var(--color-divider)]">
           <div className="editorial-wrap py-10">
             <div className="flex flex-wrap items-center gap-3">
-              <p className="caption mr-4">Filter</p>
-              {FILTERS.map((f) => {
+              <p className="caption mr-4">{t("filterLabel")}</p>
+              {filters.map((f) => {
                 const active = activeFilter === f.value;
-                const href = f.value === "all" ? "/brands" : `/brands?sector=${f.value}`;
+                const href =
+                  f.value === "all" ? "/brands" : `/brands?sector=${f.value}`;
                 return (
                   <Link
                     key={f.value}
@@ -147,7 +162,6 @@ export default async function BrandsIndexPage({
           </div>
         </section>
 
-        {/* 3 — Brand strips, alternating left/right */}
         <section className="bg-[var(--color-cream)]">
           <ul>
             {filtered.map((b, i) => {
@@ -178,11 +192,13 @@ export default async function BrandsIndexPage({
                         </div>
                         <div
                           className={`md:col-span-6 ${
-                            imageLeft ? "md:col-start-7" : "md:row-start-1 md:col-start-1"
+                            imageLeft
+                              ? "md:col-start-7"
+                              : "md:row-start-1 md:col-start-1"
                           }`}
                         >
                           <p className="caption mb-4">
-                            0{BRANDS.indexOf(b) + 1} ·{" "}
+                            0{brands.indexOf(b) + 1} ·{" "}
                             <span aria-hidden className="mx-1">
                               {b.countryFlag}
                             </span>
@@ -192,7 +208,9 @@ export default async function BrandsIndexPage({
                             {b.name}
                           </h2>
                           <p className="caption mt-4">
-                            Authorised agent since {b.partnershipYear}
+                            {bb("authorisedAgentSince", {
+                              year: b.partnershipYear,
+                            })}
                           </p>
                           <p className="mt-8 text-[var(--text-body-lg)] leading-[1.7] text-[var(--color-charcoal)]/85 max-w-xl">
                             {b.summary}
@@ -201,7 +219,8 @@ export default async function BrandsIndexPage({
                             href={`/brands/${b.slug}`}
                             className="link-inline mt-10"
                           >
-                            Explore the chapter <span className="arrow">→</span>
+                            {bb("exploreChapter")}{" "}
+                            <span className="arrow">→</span>
                           </Link>
                         </div>
                       </div>
@@ -215,32 +234,30 @@ export default async function BrandsIndexPage({
           {filtered.length === 0 ? (
             <div className="editorial-wrap py-20">
               <p className="text-[var(--color-charcoal)]/60">
-                No brands in this sector.
+                {t("noBrands")}
               </p>
             </div>
           ) : null}
         </section>
 
-        {/* 4 — Closing CTA strip */}
         <section className="section bg-[var(--color-navy)] text-[var(--color-cream)]">
           <div className="editorial-wrap">
             <FadeIn className="max-w-4xl">
               <p className="eyebrow !text-[var(--color-bronze)] mb-6">
-                Looking to be the next?
+                {t("closingEyebrow")}
               </p>
               <h2 className="text-[2.25rem] md:text-[3.5rem] leading-[1.05] tracking-tight !text-[var(--color-cream)] max-w-[18ch]">
-                Add your brand to the portfolio.
+                {t("closingTitle")}
               </h2>
               <p className="mt-8 text-[var(--text-body-lg)] leading-[1.65] opacity-85 max-w-2xl">
-                If you're an international pharmaceutical or confectionery
-                brand evaluating Yemen, let's start the conversation.
+                {t("closingBody")}
               </p>
               <div className="mt-12">
                 <Link
                   href="/partner-with-us"
                   className="btn-primary !bg-[var(--color-cream)] !text-[var(--color-navy)] hover:!bg-[var(--color-bronze)]"
                 >
-                  Become a Partner <span aria-hidden>→</span>
+                  {c("becomePartner")} <span aria-hidden>→</span>
                 </Link>
               </div>
             </FadeIn>

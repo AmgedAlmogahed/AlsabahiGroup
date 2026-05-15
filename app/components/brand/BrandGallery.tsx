@@ -1,22 +1,27 @@
 "use client";
 
 import { useState, useMemo } from "react";
+import { useTranslations } from "next-intl";
 import type { Brand } from "@/app/lib/brands";
 import BrandImage from "../BrandImage";
 
 export default function BrandGallery({ brand }: { brand: Brand }) {
-  const [filter, setFilter] = useState<string>("All");
+  const t = useTranslations("brand.gallery");
+  const [filter, setFilter] = useState<string>(
+    brand.gallery.filterChips[0] ?? "All",
+  );
 
   const visible = useMemo(() => {
-    if (filter === "All") return brand.gallery.products;
+    const allLabel = brand.gallery.filterChips[0];
+    if (filter === allLabel) return brand.gallery.products;
     return brand.gallery.products.filter((p) => p.category === filter);
-  }, [filter, brand.gallery.products]);
+  }, [filter, brand.gallery.products, brand.gallery.filterChips]);
 
   return (
     <section className="section bg-[var(--color-cream)]">
       <div className="editorial-wrap">
         <div className="max-w-3xl">
-          <p className="eyebrow mb-6">Product gallery</p>
+          <p className="eyebrow mb-6">{t("eyebrow")}</p>
           <h2 className="text-[2.25rem] md:text-[3rem] leading-[1.05] tracking-tight max-w-[22ch]">
             {brand.gallery.h2}
           </h2>
@@ -25,10 +30,9 @@ export default function BrandGallery({ brand }: { brand: Brand }) {
           </p>
         </div>
 
-        {/* Filter chips */}
         <div
           role="tablist"
-          aria-label="Product category filter"
+          aria-label={t("filterAriaLabel")}
           className="mt-14 flex flex-wrap gap-2"
         >
           {brand.gallery.filterChips.map((chip) => {
@@ -51,13 +55,12 @@ export default function BrandGallery({ brand }: { brand: Brand }) {
           })}
         </div>
 
-        {/* Product cards */}
         <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-14">
           {visible.map((p) => (
             <article key={p.name} className="group">
               <BrandImage
                 src={brand.images?.products?.[p.name]}
-                alt={`${p.name} — product photography on neutral background, packaging detail in focus.`}
+                alt={t("productImageAlt", { name: p.name })}
                 tone="cream"
                 aspect="square"
               />
@@ -76,13 +79,13 @@ export default function BrandGallery({ brand }: { brand: Brand }) {
 
         {visible.length === 0 ? (
           <p className="mt-12 text-[var(--color-charcoal)]/60">
-            No products in this category.
+            {t("noProducts")}
           </p>
         ) : null}
 
         {brand.gallery.note ? (
           <p className="mt-16 text-[0.875rem] italic text-[var(--color-charcoal)]/55 max-w-2xl">
-            Note: {brand.gallery.note}
+            {t("notePrefix")} {brand.gallery.note}
           </p>
         ) : null}
       </div>

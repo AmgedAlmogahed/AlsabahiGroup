@@ -1,66 +1,60 @@
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import FadeIn from "./FadeIn";
 import BrandImage from "./BrandImage";
 import { SITE_IMAGES } from "@/app/lib/site-images";
 
-const SECTORS = [
-  {
-    eyebrow: "Pharmaceuticals",
-    h3: "Regulated. Cold-chain ready. Pharmacy-connected.",
-    body: "We distribute pharmaceutical and health products from European and international manufacturers across Yemen's hospital networks, pharmacy chains, and independent dispensaries — under full Ministry of Health registration and cold-chain protocols where required.",
-    cta: { label: "Explore Pharmaceuticals", href: "/sectors/pharmaceuticals" },
-    photoCaption:
-      "Cold-chain pharmaceutical packaging — close-up of regulated product label and box detail.",
-    photoTone: "navy" as const,
-    imageKey: "homeSectorPharma" as const,
-  },
-  {
-    eyebrow: "Confectionery",
-    h3: "Premium taste. Trusted shelves.",
-    body: "We bring international confectionery brands to Yemen's supermarkets, kiosks, and traditional retail channels — managing import, in-market branding, retail merchandising, and the day-to-day relationships that keep shelves stocked.",
-    cta: { label: "Explore Confectionery", href: "/sectors/confectionery" },
-    photoCaption:
-      "Confectionery packaging arranged on a Yemeni supermarket shelf — warm tones, natural retail light.",
-    photoTone: "bronze" as const,
-    imageKey: "homeSectorConfectionery" as const,
-  },
-];
-
 export default function Sectors() {
+  const t = useTranslations("sectorsBlock");
+
+  const sectors = [
+    {
+      key: "pharma" as const,
+      href: "/sectors/pharmaceuticals" as const,
+      photoTone: "navy" as const,
+      imageKey: "homeSectorPharma" as const,
+    },
+    {
+      key: "confectionery" as const,
+      href: "/sectors/confectionery" as const,
+      photoTone: "bronze" as const,
+      imageKey: "homeSectorConfectionery" as const,
+    },
+  ];
+
   return (
     <section className="section bg-[var(--color-offwhite)]">
       <div className="editorial-wrap">
         <FadeIn className="max-w-3xl">
-          <p className="eyebrow mb-6">Sectors</p>
+          <p className="eyebrow mb-6">{t("eyebrow")}</p>
           <h2 className="text-[2.25rem] md:text-[3rem] leading-[1.05] tracking-tight max-w-[18ch]">
-            Two sectors. Deep expertise in each.
+            {t("title")}
           </h2>
           <p className="mt-8 text-[var(--text-body-lg)] leading-[1.7] text-[var(--color-charcoal)]/85 max-w-2xl">
-            We focus exclusively on categories where Yemen's regulatory and
-            distribution environment rewards experienced agents.
+            {t("body")}
           </p>
         </FadeIn>
 
         <div className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-10">
-          {SECTORS.map((s, i) => (
-            <FadeIn key={s.eyebrow} delay={i * 100}>
+          {sectors.map((s, i) => (
+            <FadeIn key={s.key} delay={i * 100}>
               <article className="group">
                 <BrandImage
                   src={SITE_IMAGES[s.imageKey]}
-                  alt={s.photoCaption}
+                  alt={t(`${s.key}.photoCaption`)}
                   tone={s.photoTone}
                   aspect="wide"
                 />
                 <div className="mt-8">
-                  <p className="eyebrow mb-4">{s.eyebrow}</p>
+                  <p className="eyebrow mb-4">{t(`${s.key}.eyebrow`)}</p>
                   <h3 className="font-[var(--font-display)] text-[1.625rem] md:text-[2rem] leading-[1.1] max-w-[20ch]">
-                    {s.h3}
+                    {t(`${s.key}.h3`)}
                   </h3>
                   <p className="mt-6 text-[var(--text-body)] leading-[1.7] text-[var(--color-charcoal)]/85 max-w-xl">
-                    {s.body}
+                    {t(`${s.key}.body`)}
                   </p>
-                  <Link href={s.cta.href} className="link-inline mt-8">
-                    {s.cta.label} <span className="arrow">→</span>
+                  <Link href={s.href} className="link-inline mt-8">
+                    {t(`${s.key}.ctaLabel`)} <span className="arrow">→</span>
                   </Link>
                 </div>
               </article>

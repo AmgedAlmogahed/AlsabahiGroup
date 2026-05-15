@@ -1,13 +1,8 @@
 "use client";
 
 import { useActionState } from "react";
-import {
-  Label,
-  Input,
-  Textarea,
-  Select,
-  Honeypot,
-} from "./form/Field";
+import { useTranslations } from "next-intl";
+import { Label, Input, Textarea, Select, Honeypot } from "./form/Field";
 import { submitContactForm, initialFormState } from "@/app/lib/actions";
 
 const COUNTRIES = [
@@ -25,15 +20,17 @@ const COUNTRIES = [
   "Other",
 ];
 
-const REASONS = [
-  { value: "partnership", label: "Brand partnership enquiry" },
-  { value: "supplier", label: "Supplier or vendor enquiry" },
-  { value: "press", label: "Press / media" },
-  { value: "general", label: "General enquiry" },
-  { value: "other", label: "Other" },
-];
+const REASON_KEYS = [
+  "partnership",
+  "supplier",
+  "press",
+  "general",
+  "other",
+] as const;
 
 export default function ContactForm() {
+  const t = useTranslations("form.contact");
+  const f = useTranslations("form");
   const [state, action, pending] = useActionState(
     submitContactForm,
     initialFormState,
@@ -43,10 +40,10 @@ export default function ContactForm() {
     return (
       <div className="border border-[var(--color-bronze)]/40 p-10">
         <p className="caption mb-4 !text-[var(--color-bronze)] !opacity-100">
-          Sent
+          {t("successLabel")}
         </p>
         <h3 className="font-[var(--font-display)] text-[1.5rem] md:text-[1.875rem] leading-[1.2] tracking-tight max-w-[22ch]">
-          {state.message}
+          {t("successMessage")}
         </h3>
       </div>
     );
@@ -59,43 +56,46 @@ export default function ContactForm() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-7">
         <div>
           <Label htmlFor="fullName" required>
-            Full name
+            {t("fullName")}
           </Label>
           <Input id="fullName" name="fullName" required autoComplete="name" />
         </div>
         <div>
-          <Label htmlFor="company">Company (optional)</Label>
+          <Label htmlFor="company">{t("company")}</Label>
           <Input id="company" name="company" autoComplete="organization" />
         </div>
 
         <div>
           <Label htmlFor="country" required>
-            Country
+            {t("country")}
           </Label>
           <Select
             id="country"
             name="country"
             required
-            placeholder="Select…"
+            placeholder={f("selectPlaceholder")}
             options={COUNTRIES.map((c) => ({ value: c, label: c }))}
           />
         </div>
         <div>
           <Label htmlFor="reason" required>
-            Reason for contact
+            {t("reason")}
           </Label>
           <Select
             id="reason"
             name="reason"
             required
-            placeholder="Select…"
-            options={REASONS}
+            placeholder={f("selectPlaceholder")}
+            options={REASON_KEYS.map((k) => ({
+              value: k,
+              label: t(`reasons.${k}`),
+            }))}
           />
         </div>
 
         <div className="md:col-span-2">
           <Label htmlFor="email" required>
-            Email
+            {t("email")}
           </Label>
           <Input
             id="email"
@@ -109,14 +109,14 @@ export default function ContactForm() {
 
       <div>
         <Label htmlFor="message" required>
-          Message
+          {t("message")}
         </Label>
         <Textarea id="message" name="message" required rows={4} />
       </div>
 
-      {!state.ok && state.message ? (
+      {!state.ok && state.code ? (
         <p className="text-[0.95rem] text-[var(--color-bronze)]" role="alert">
-          {state.message}
+          {f(`messages.${state.code}`)}
         </p>
       ) : null}
 
@@ -125,7 +125,7 @@ export default function ContactForm() {
         disabled={pending}
         className="btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
       >
-        {pending ? "Sending…" : "Send message"} <span aria-hidden>→</span>
+        {pending ? t("submitting") : t("submit")} <span aria-hidden>→</span>
       </button>
     </form>
   );

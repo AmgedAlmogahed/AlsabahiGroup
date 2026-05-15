@@ -80,7 +80,9 @@ export type Brand = {
   };
 };
 
-export const BRANDS: Brand[] = [
+import { BRANDS_AR } from "./brands.ar";
+
+const BRANDS_EN: Brand[] = [
   // ── 1. Lýsi ────────────────────────────────────────────────────────────
   {
     slug: "lysi",
@@ -737,14 +739,22 @@ export const BRANDS: Brand[] = [
   },
 ];
 
-export function getBrand(slug: string): Brand | undefined {
-  return BRANDS.find((b) => b.slug === slug);
+/** Back-compat default export — points at English. New callers should pass locale to getBrand/getBrands. */
+export const BRANDS = BRANDS_EN;
+
+export function getBrands(locale?: string): Brand[] {
+  return locale === "ar" ? BRANDS_AR : BRANDS_EN;
 }
 
-export function getRelatedBrands(slug: string): Brand[] {
-  const brand = getBrand(slug);
+export function getBrand(slug: string, locale?: string): Brand | undefined {
+  const source = locale === "ar" ? BRANDS_AR : BRANDS_EN;
+  return source.find((b) => b.slug === slug);
+}
+
+export function getRelatedBrands(slug: string, locale?: string): Brand[] {
+  const brand = getBrand(slug, locale);
   if (!brand) return [];
   return brand.continue.relatedSlugs
-    .map((s) => getBrand(s))
+    .map((s) => getBrand(s, locale))
     .filter((b): b is Brand => Boolean(b));
 }
