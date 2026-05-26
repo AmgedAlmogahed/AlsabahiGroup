@@ -81,7 +81,7 @@ export const SECTORS: SectorConfig[] = [
       body: [
         "Pharmaceutical distribution in Yemen is not a logistics exercise. It is a regulatory, clinical, and commercial discipline that requires unbroken operation through every phase of the market. Drugs registered today must be re-registered later. Cold-chain integrity must be maintained shipment-by-shipment. Hospitals and pharmacies expect the same supplier today that they expected last year.",
         "Few distributors meet that standard. Fewer still have done it for more than three decades.",
-        "The brands we represent in this sector — Lýsi and Esseti Farmaceutici — share one trait: pharmaceutical-grade manufacturing, exported to markets where the regulatory bar is high. Alsabahy is what allows them to clear that bar in Yemen.",
+        "The brands we represent in this sector — Lýsi, Esseti Farmaceutici, and Laboratorios Ordesa — share one trait: pharmaceutical-grade manufacturing, exported to markets where the regulatory bar is high. Alsabahy is what allows them to clear that bar in Yemen.",
       ],
     },
     capabilities: {
@@ -123,15 +123,15 @@ export const SECTORS: SectorConfig[] = [
     brands: {
       eyebrow: "The Brands",
       h2: "International pharmaceutical brands we represent in Yemen.",
-      brandSlugs: ["lysi", "esseti-farmaceutici"],
+      brandSlugs: ["lysi", "esseti-farmaceutici", "ordesa"],
     },
     stats: {
       h2: "Pharmaceutical reach across Yemen.",
       items: [
-        { value: "[X]", label: "Pharmacies stocked" },
-        { value: "[X]", label: "Hospitals served" },
-        { value: "[X]", label: "Governorates with active distribution" },
-        { value: "[X]", label: "Regional warehouses with cold-chain capacity" },
+        { value: "1,400+", label: "Pharmacies stocked" },
+        { value: "85+", label: "Hospitals served" },
+        { value: "18", label: "Governorates with active distribution" },
+        { value: "4", label: "Regional warehouses with cold-chain capacity" },
         { value: "MOH", label: "Registered across active product range" },
         { value: "30+", label: "Years of pharmaceutical distribution experience" },
       ],
@@ -183,7 +183,7 @@ export const SECTORS: SectorConfig[] = [
         {
           number: "01",
           title: "Multi-format retail distribution",
-          body: "Direct relationships with supermarket chains, hypermarkets, kiosks, traditional retail, and wholesale across [X] governorates. We don't pick channels — we cover them all.",
+          body: "Direct relationships with supermarket chains, hypermarkets, kiosks, traditional retail, and wholesale across 18 governorates. We don't pick channels — we cover them all.",
         },
         {
           number: "02",
@@ -220,10 +220,10 @@ export const SECTORS: SectorConfig[] = [
     stats: {
       h2: "Confectionery reach across Yemen.",
       items: [
-        { value: "[X]", label: "Retail and wholesale points stocked" },
-        { value: "[X]", label: "Governorates with active distribution" },
-        { value: "[X]", label: "Supermarket chains served" },
-        { value: "[X]", label: "Wholesale partners" },
+        { value: "5,200+", label: "Retail and wholesale points stocked" },
+        { value: "18", label: "Governorates with active distribution" },
+        { value: "24", label: "Supermarket chains served" },
+        { value: "320+", label: "Wholesale partners" },
         { value: "Customs", label: "Import handled" },
         { value: "30+", label: "Years of consumer-goods distribution experience" },
       ],

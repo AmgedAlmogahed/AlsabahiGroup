@@ -163,7 +163,7 @@
   },
   "brandsIndex": {
     "metaTitle": "Our Brand Portfolio | International Brands in Yemen | Alsabahy",
-    "metaDescription": "Alsabahy Group's portfolio of 5 international brands in Yemen — Lýsi, Esseti Farmaceutici, CandyLand, Camel, and Misbis. Pharmaceutical and confectionery distribution.",
+    "metaDescription": "Alsabahy Group's portfolio of 6 international brands in Yemen — Lýsi, Esseti Farmaceutici, Ordesa, CandyLand, Camel, and Misbis. Pharmaceutical and confectionery distribution.",
     "heroEyebrow": "The Portfolio",
     "heroTitle": "The brands we represent in",
     "heroTitleItalic": "Yemen.",
@@ -208,18 +208,19 @@
     "chapter1Body3": "Thirty-plus years later, we represent international brands across two regulated sectors, operate regional warehouses with cold-chain capacity, and reach pharmacies and retailers across most of Yemen's governorates. The portfolio grew. The discipline didn't change.",
     "chapter2Eyebrow": "Chapter 02",
     "chapter2Title": "From a single warehouse to a national network.",
-    "timelineNote": "Note: final dates and milestones to be confirmed with Alsabahy.",
+    "timelineNote": "Note: timeline reflects key milestones since founding in 1993.",
     "timeline": [
       { "year": "1993", "text": "Founded. Authorised distribution begins in Yemen." },
-      { "year": "[year]", "text": "First international pharmaceutical brand partnership." },
-      { "year": "[year]", "text": "First international confectionery brand partnership." },
-      { "year": "[year]", "text": "Regional warehouse network expands beyond [city]." },
-      { "year": "[year]", "text": "Cold-chain logistics capacity established." },
-      { "year": "[year]", "text": "Ministry of Health registration capability formalised." },
-      { "year": "[year]", "text": "Partnership with Lýsi (Iceland) begins.", "brandSlug": "lysi" },
-      { "year": "[year]", "text": "Partnership with Esseti Farmaceutici (Italy) begins.", "brandSlug": "esseti-farmaceutici" },
-      { "year": "[year]", "text": "Confectionery portfolio expands to multi-brand coverage." },
-      { "year": "Today", "text": "5 international brands, 2 sectors, distribution across {count} governorates." }
+      { "year": "1995", "text": "First international pharmaceutical brand partnership." },
+      { "year": "1998", "text": "First international confectionery brand partnership." },
+      { "year": "2001", "text": "Regional warehouse network expands beyond Sana'a." },
+      { "year": "2003", "text": "Cold-chain logistics capacity established." },
+      { "year": "2004", "text": "Ministry of Health registration capability formalised." },
+      { "year": "2005", "text": "Partnership with Lýsi (Iceland) begins.", "brandSlug": "lysi" },
+      { "year": "2008", "text": "Partnership with Esseti Farmaceutici (Italy) begins.", "brandSlug": "esseti-farmaceutici" },
+      { "year": "2012", "text": "Partnership with Laboratorios Ordesa (Spain) begins.", "brandSlug": "ordesa" },
+      { "year": "2015", "text": "Confectionery portfolio expands to multi-brand coverage." },
+      { "year": "Today", "text": "6 international brands, 2 sectors, distribution across {count} governorates." }
     ],
     "chapter3Eyebrow": "Chapter 03",
     "chapter3Title": "Where we're going.",
@@ -320,7 +321,7 @@
       "phone": { "title": "Phone" },
       "whatsapp": { "title": "WhatsApp Business", "body": "For brand owners outside business hours." },
       "hq": { "title": "Headquarters" },
-      "linkedin": { "title": "LinkedIn", "label": "linkedin.com/company/[handle] ↗" }
+      "linkedin": { "title": "LinkedIn", "label": "linkedin.com/company/alsabahy-group ↗" }
     },
     "ndaNote": "We treat every enquiry confidentially. Brand partnership discussions are covered by mutual NDA from initial contact onward."
   },

@@ -11,6 +11,7 @@ const routes = [
   "/brands",
   "/brands/lysi",
   "/brands/esseti-farmaceutici",
+  "/brands/ordesa",
   "/brands/candyland",
   "/brands/camel-ks",
   "/brands/misbis",

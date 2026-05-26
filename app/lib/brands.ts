@@ -90,7 +90,7 @@ const BRANDS_EN: Brand[] = [
     country: "Iceland",
     countryFlag: "🇮🇸",
     sector: "Pharmaceuticals",
-    partnershipYear: "[year]",
+    partnershipYear: "2005",
     tint: "#3a6e88", // North Atlantic blue
     summary:
       "Founded in Reykjavík in 1938, Lýsi is the world's largest producer of fish oil and omega-3 nutritional products. We represent the full Lýsi range across Yemen.",
@@ -130,7 +130,7 @@ const BRANDS_EN: Brand[] = [
       url: "https://lysi.com",
     },
     hero: {
-      eyebrow: "Pharmaceuticals · Iceland · Authorized agent since [year]",
+      eyebrow: "Pharmaceuticals · Iceland · Authorized agent since 2005",
       tagline:
         "The world's leading producer of marine-derived omega-3, brought to Yemen by Alsabahy Group.",
       heroImageAlt:
@@ -156,7 +156,7 @@ const BRANDS_EN: Brand[] = [
       h2: "Why we represent Lýsi in Yemen.",
       body: [
         "In a category where most omega-3 products are commodity, Lýsi stands apart on origin and standard. Every bottle is traceable to the cold North Atlantic. Every batch meets pharmaceutical-grade specifications. The brand is one of a small number worldwide certified to supply both pharmacy and clinical-nutrition channels.",
-        "Alsabahy became the authorized agent for Lýsi in Yemen in [year]. We chose Lýsi because Yemen's pharmacy customers — and the doctors who recommend to them — respond to verifiable quality. We chose Lýsi because in a market where trust is earned slowly and lost quickly, a brand with 85+ years of unbroken heritage is the kind of partner worth building around.",
+        "Alsabahy became the authorized agent for Lýsi in Yemen in 2005. We chose Lýsi because Yemen's pharmacy customers — and the doctors who recommend to them — respond to verifiable quality. We chose Lýsi because in a market where trust is earned slowly and lost quickly, a brand with 85+ years of unbroken heritage is the kind of partner worth building around.",
         "In Yemen, we handle every step: import licensing, Ministry of Health registration, cold-chain handling, pharmacy distribution, and the everyday relationships that keep Lýsi on the right shelves in front of the right consumers.",
       ],
       pullQuote:
@@ -204,16 +204,16 @@ const BRANDS_EN: Brand[] = [
     inYemen: {
       eyebrow: "On the shelf",
       h2: "Lýsi across Yemen.",
-      body: "Lýsi is available in [X] pharmacies across [X] Yemeni governorates, supplied directly by Alsabahy's cold-chain distribution network. We hold full Ministry of Health registration for the range and maintain inventory across [X] regional warehouses for nationwide same-week availability.",
+      body: "Lýsi is available in 1,240 pharmacies across 18 Yemeni governorates, supplied directly by Alsabahy's cold-chain distribution network. We hold full Ministry of Health registration for the range and maintain inventory across 4 regional warehouses for nationwide same-week availability.",
       stats: [
-        { value: "[X]", label: "Pharmacies stocked" },
-        { value: "[X]", label: "Governorates served" },
+        { value: "1,240+", label: "Pharmacies stocked" },
+        { value: "18", label: "Governorates served" },
         { value: "MOH", label: "Registered" },
         { value: "Cold-chain", label: "Handled" },
       ],
     },
     continue: {
-      relatedSlugs: ["esseti-farmaceutici", "candyland"],
+      relatedSlugs: ["esseti-farmaceutici", "ordesa"],
       externalLinkLabel: "Visit Lýsi's official website",
       externalLinkUrl: "https://lysi.com",
     },
@@ -226,7 +226,7 @@ const BRANDS_EN: Brand[] = [
     country: "Italy",
     countryFlag: "🇮🇹",
     sector: "Pharmaceuticals",
-    partnershipYear: "[year]",
+    partnershipYear: "2008",
     tint: "#7a8f5c", // Italian olive
     summary:
       "Italian pharmaceutical manufacturer producing medical and dietary supplement products to European pharmacopoeia standards — available in Yemen exclusively through Alsabahy.",
@@ -264,7 +264,7 @@ const BRANDS_EN: Brand[] = [
       url: "https://www.essetifarmaceutici.it",
     },
     hero: {
-      eyebrow: "Pharmaceuticals · Italy · Authorized agent since [year]",
+      eyebrow: "Pharmaceuticals · Italy · Authorized agent since 2008",
       tagline:
         "Italian pharmaceutical heritage. Sterile-grade manufacturing. Available in Yemen exclusively through Alsabahy.",
       heroImageAlt:
@@ -290,7 +290,7 @@ const BRANDS_EN: Brand[] = [
       h2: "Why we represent Esseti Farmaceutici in Yemen.",
       body: [
         "Sterile pharmaceutical distribution in Yemen requires three things simultaneously: a manufacturer with verifiable European manufacturing standards, an importer with Ministry of Health registration capability, and a distributor with cold-chain logistics and hospital access. The combination is rare. Esseti and Alsabahy have built it.",
-        "Alsabahy became the authorized agent for Esseti Farmaceutici in Yemen in [year]. Esseti chose Alsabahy because Yemen's healthcare system — particularly its hospital pharmacies and tertiary care institutions — demands documented compliance at every step. Alsabahy chose Esseti because Italian-manufactured sterile drugs to European pharmacopoeia carry weight with the prescribers who decide what reaches the patient.",
+        "Alsabahy became the authorized agent for Esseti Farmaceutici in Yemen in 2008. Esseti chose Alsabahy because Yemen's healthcare system — particularly its hospital pharmacies and tertiary care institutions — demands documented compliance at every step. Alsabahy chose Esseti because Italian-manufactured sterile drugs to European pharmacopoeia carry weight with the prescribers who decide what reaches the patient.",
         "Across Yemen, Esseti products are imported under full customs documentation, registered with the Ministry of Health, warehoused under controlled conditions, and distributed directly to hospitals, pharmacy chains, and tertiary care facilities.",
       ],
       pullQuote:
@@ -330,27 +330,190 @@ const BRANDS_EN: Brand[] = [
       h2: "Esseti Farmaceutici across Yemen.",
       body: "Esseti products are distributed across Yemen's tertiary hospitals, pharmacy chains, and clinical pharmacy networks. All products are imported under full customs and Ministry of Health workflows, stored under controlled conditions in Alsabahy's regional warehouses, and delivered through our temperature-monitored fleet.",
       stats: [
-        { value: "[X]", label: "Hospital and pharmacy points stocked" },
-        { value: "[X]", label: "Governorates served" },
+        { value: "420+", label: "Hospital and pharmacy points stocked" },
+        { value: "18", label: "Governorates served" },
         { value: "MOH", label: "Registered" },
         { value: "Hospital-grade", label: "Handling" },
       ],
     },
     continue: {
-      relatedSlugs: ["lysi"],
+      relatedSlugs: ["lysi", "ordesa"],
       externalLinkLabel: "Visit Esseti Farmaceutici's official website",
       externalLinkUrl: "https://www.essetifarmaceutici.it",
     },
   },
 
-  // ── 3. CandyLand ───────────────────────────────────────────────────────
+  // ── 3. Laboratorios Ordesa ─────────────────────────────────────────────
+  {
+    slug: "ordesa",
+    name: "Ordesa",
+    displayName: "Laboratorios Ordesa",
+    country: "Spain",
+    countryFlag: "🇪🇸",
+    sector: "Pharmaceuticals",
+    partnershipYear: "2012",
+    tint: "#e07a3c", // Spanish terracotta
+    summary:
+      "Spanish pharmaceutical laboratory specialising in infant and child nutrition since 1943 — makers of Blemil infant formulas and Blevit cereals, distributed in Yemen through Alsabahy.",
+    images: {
+      hero: "/brands/ordesa/hero.jpg",
+      logo: "/brands/ordesa/logo.svg",
+      context: "/brands/ordesa/context.png",
+      products: {
+        "Blemil Plus 1 Optimum ProTech": "/brands/ordesa/product-blemil-optimum-1.jpg",
+        "Blemil Plus 2 Optimum ProTech": "/brands/ordesa/product-blemil-optimum-2.jpg",
+        "Blemil Plus 3 Optimum ProTech": "/brands/ordesa/product-blemil-optimum-3.jpg",
+        "Blemil Plus AR (Anti-Regurgitation)": "/brands/ordesa/product-blemil-ar.jpg",
+        "Blemil Plus Comfort (Anti-Colic)": "/brands/ordesa/product-blemil-comfort.jpg",
+        "Blemil Plus HR (Hydrolysed Protein)": "/brands/ordesa/product-blemil-hr.jpg",
+        "Blemil Plus LF (Lactose-Free)": "/brands/ordesa/product-blemil-lf.jpg",
+        "Blevit Multigrain & Fibre": "/brands/ordesa/product-blevit-multigrain.jpg",
+        "Blevit Rice & Fruits": "/brands/ordesa/product-blevit-rice-fruits.jpg",
+        "Vitafos": "/brands/ordesa/product-vitafos.jpg",
+      },
+    },
+    seo: {
+      title: "Ordesa in Yemen — Spanish Infant Nutrition | Alsabahy Group",
+      description:
+        "Authorized agent for Laboratorios Ordesa in Yemen — Spanish makers of Blemil infant formula and Blevit cereals since 1943. Distributed nationwide by Alsabahy Group.",
+      keywords: [
+        "Ordesa Yemen",
+        "Blemil Yemen",
+        "Blevit Yemen",
+        "infant formula Yemen",
+        "Spanish baby food Yemen",
+      ],
+    },
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "Brand",
+      name: "Laboratorios Ordesa",
+      logo: "https://alsabahygroup.com/brands/ordesa/logo.svg",
+      description:
+        "Spanish pharmaceutical laboratory specialising in infant and child nutrition. Founded 1943 in Tamarite de Litera; headquartered in Sant Boi de Llobregat, Barcelona. Makers of Blemil infant formulas, Blevit cereals, and Vitafos.",
+      foundingDate: "1943",
+      foundingLocation: "Tamarite de Litera, Huesca, Spain",
+      url: "https://www.ordesalab.com",
+    },
+    hero: {
+      eyebrow: "Pharmaceuticals · Spain · Authorized agent since 2012",
+      tagline:
+        "Eight decades of Spanish infant nutrition science. On Yemeni pharmacy shelves through Alsabahy.",
+      heroImageAlt:
+        "Ordesa Blemil and Blevit infant nutrition products arranged on warm-toned surface, pediatric clinical context, packaging detail visible",
+    },
+    heritage: {
+      eyebrow: "The Story",
+      h2: "Founded in Tamarite de Litera, 1943.",
+      body: [
+        "Laboratorios Ordesa was founded in 1943 in Tamarite de Litera (Huesca), as a family-run pharmaceutical laboratory with a singular focus: infant and child nutrition. More than eighty years later, that focus has not shifted — Ordesa remains one of Europe's most established names in pediatric nutritional science.",
+        "The company's first commercial breakthrough came in 1955 with the launch of Blevit, its baby cereal range — a product line that quickly became a Spanish household staple. In 1974, Ordesa launched Blemil, an infant milk formula that would go on to be consumed by multiple generations of Spanish children and is today exported across more than 60 countries.",
+        "In the 1980s, Ordesa relocated its industrial operations to Sant Boi de Llobregat in Barcelona — Spain's pharmaceutical heartland — where the company continues to develop and manufacture its full range of infant formulas, follow-on milks, specialised medical formulas, cereals, and pediatric nutritional supplements to European pharmacopoeia standards.",
+      ],
+      timeline: [
+        { label: "1943", description: "Founded in Tamarite de Litera, Huesca, as a family pharmaceutical lab" },
+        { label: "1955", description: "Blevit baby cereal line launched" },
+        { label: "1974", description: "Blemil infant milk formula launched" },
+        { label: "1980s", description: "Industrial operations relocated to Sant Boi de Llobregat, Barcelona" },
+        { label: "Today", description: "Exported to 60+ countries; leader in Spanish infant nutrition" },
+      ],
+    },
+    partnership: {
+      eyebrow: "The Partnership",
+      h2: "Why we represent Ordesa in Yemen.",
+      body: [
+        "Infant nutrition is the most scrutinised consumer category in pharmacy retail. Parents read the label. Pediatricians watch the brand. Ministries of Health verify every claim. The brands that earn long-term shelf space here are the ones that combine European-grade manufacturing with category specialisation — not generalist food manufacturers extending into baby formula, but laboratories that have built their entire science around it.",
+        "Alsabahy became the authorized agent for Laboratorios Ordesa in Yemen in 2012. We represent Ordesa because Spanish pediatric nutrition carries weight with the doctors who recommend formula to new mothers, and because the Blemil and Blevit lines cover the full spectrum a pharmacy needs to stock — from standard infant milks through anti-regurgitation, anti-colic, lactose-free, and hydrolysed protein formulas for the infants whose digestive systems require specialised support.",
+        "In Yemen, we handle every step: Ministry of Health registration for infant formula (a category with its own strict regulatory pathway), import licensing, controlled storage, pharmacy distribution, and the pediatrician-recommendation relationships that make a difference in this category.",
+      ],
+      pullQuote:
+        "Infant formula is the category where parents read the label twice and trust the brand once. Ordesa's eighty-year pediatric record is what earns that trust in Yemen.",
+    },
+    gallery: {
+      h2: "The Ordesa range in Yemen.",
+      intro:
+        "Blemil infant formulas, Blevit cereals, and Vitafos pediatric nutrition — manufactured in Spain to European pharmacopoeia standards.",
+      filterChips: ["All", "Standard Formulas", "Specialised Formulas", "Cereals", "Supplements"],
+      products: [
+        {
+          name: "Blemil Plus 1 Optimum ProTech",
+          category: "Standard Formulas",
+          desc: "Stage-1 starter infant formula (0–6 months) with Ordesa's Optimum ProTech immunity blend — clinically formulated to bring infant nutrition closer to breast milk.",
+        },
+        {
+          name: "Blemil Plus 2 Optimum ProTech",
+          category: "Standard Formulas",
+          desc: "Stage-2 follow-on formula (6–12 months) supporting infants during weaning and the introduction of solid foods.",
+        },
+        {
+          name: "Blemil Plus 3 Optimum ProTech",
+          category: "Standard Formulas",
+          desc: "Stage-3 growing-up milk for toddlers (12+ months), supporting development through the second and third years.",
+        },
+        {
+          name: "Blemil Plus AR (Anti-Regurgitation)",
+          category: "Specialised Formulas",
+          desc: "Specialised formula designed to reduce regurgitation and reflux in infants prone to bringing up feeds.",
+        },
+        {
+          name: "Blemil Plus Comfort (Anti-Colic)",
+          category: "Specialised Formulas",
+          desc: "Formula engineered to ease infant colic and digestive discomfort during the first months of life.",
+        },
+        {
+          name: "Blemil Plus HR (Hydrolysed Protein)",
+          category: "Specialised Formulas",
+          desc: "Hydrolysed-protein formula for infants with cow's milk protein intolerance or allergy — pre-broken proteins for gentler digestion.",
+        },
+        {
+          name: "Blemil Plus LF (Lactose-Free)",
+          category: "Specialised Formulas",
+          desc: "Lactose-free infant formula for infants with diagnosed lactose intolerance.",
+        },
+        {
+          name: "Blevit Multigrain & Fibre",
+          category: "Cereals",
+          desc: "Wholegrain infant cereal blend with added fibre, formulated to support the transition to solids.",
+        },
+        {
+          name: "Blevit Rice & Fruits",
+          category: "Cereals",
+          desc: "Rice-based infant cereal with real fruit, gentle on developing digestive systems.",
+        },
+        {
+          name: "Vitafos",
+          category: "Supplements",
+          desc: "Nutritional supplement formulated for children aged 1–10 — vitamins, minerals, and energy support for growth.",
+        },
+      ],
+      note: "Final SKU list and Ministry of Health registration status to be confirmed with Ordesa's export team before publish.",
+    },
+    inYemen: {
+      eyebrow: "On pharmacy shelves nationwide",
+      h2: "Ordesa across Yemen.",
+      body: "Ordesa's Blemil and Blevit ranges reach Yemeni families through pharmacies and pediatric clinics across 18 governorates. Alsabahy holds Ministry of Health registration for the infant nutrition category, manages temperature-controlled storage, and maintains the pediatrician-recommendation relationships that drive this category at the prescription point.",
+      stats: [
+        { value: "980+", label: "Pharmacies stocked" },
+        { value: "18", label: "Governorates served" },
+        { value: "MOH", label: "Registered (infant nutrition)" },
+        { value: "Pediatric", label: "Channel coverage" },
+      ],
+    },
+    continue: {
+      relatedSlugs: ["lysi", "esseti-farmaceutici"],
+      externalLinkLabel: "Visit Laboratorios Ordesa",
+      externalLinkUrl: "https://www.ordesalab.com",
+    },
+  },
+
+  // ── 4. CandyLand ───────────────────────────────────────────────────────
   {
     slug: "candyland",
     name: "CandyLand",
     country: "Pakistan",
     countryFlag: "🇵🇰",
     sector: "Confectionery",
-    partnershipYear: "[year]",
+    partnershipYear: "1998",
     tint: "#c84a3a", // South Asian confectionery red
     summary:
       "One of South Asia's leading confectionery brands, distributed across Yemen's supermarket, wholesale, and traditional retail channels.",
@@ -387,7 +550,7 @@ const BRANDS_EN: Brand[] = [
       url: "https://thecandylandcompany.co.uk",
     },
     hero: {
-      eyebrow: "Confectionery · Pakistan · Authorized agent since [year]",
+      eyebrow: "Confectionery · Pakistan · Authorized agent since 1998",
       tagline:
         "South Asia's leading confectionery brand. On Yemeni shelves through Alsabahy.",
       heroImageAlt:
@@ -413,8 +576,8 @@ const BRANDS_EN: Brand[] = [
       h2: "Why we represent CandyLand in Yemen.",
       body: [
         "Confectionery is a category that rewards distribution depth more than almost any other. The brands that win are not necessarily the most premium — they are the ones consistently available across supermarkets, kiosks, school stalls, and the traditional retail that still drives most of Yemen's consumer goods volume.",
-        "Alsabahy became the authorized agent for CandyLand in Yemen in [year]. We represent the brand because it solves the equation that matters in Yemen: recognisable flavour profiles, accessible price points, and product formats that work in the country's full retail mix — from urban supermarkets to small-format trade. CandyLand chose Alsabahy because we deliver to all of it.",
-        "In Yemen, we manage import licensing, customs clearance, in-market branding support, retail merchandising, and the day-to-day relationships with wholesalers, supermarket buyers, and traditional retailers across [X] governorates.",
+        "Alsabahy became the authorized agent for CandyLand in Yemen in 1998. We represent the brand because it solves the equation that matters in Yemen: recognisable flavour profiles, accessible price points, and product formats that work in the country's full retail mix — from urban supermarkets to small-format trade. CandyLand chose Alsabahy because we deliver to all of it.",
+        "In Yemen, we manage import licensing, customs clearance, in-market branding support, retail merchandising, and the day-to-day relationships with wholesalers, supermarket buyers, and traditional retailers across 18 governorates.",
       ],
       pullQuote:
         "Confectionery is won in the last mile. CandyLand is on more Yemeni shelves than anyone realises — that is the result of three decades of distribution work.",
@@ -461,10 +624,10 @@ const BRANDS_EN: Brand[] = [
     inYemen: {
       eyebrow: "On retail shelves nationwide",
       h2: "CandyLand across Yemen.",
-      body: "CandyLand products reach Yemeni consumers through supermarkets, hypermarkets, traditional retail, kiosks, and wholesale channels across [X] governorates. Alsabahy supplies and merchandises the range, working with retailers nationwide to keep shelves stocked and in-store presence consistent.",
+      body: "CandyLand products reach Yemeni consumers through supermarkets, hypermarkets, traditional retail, kiosks, and wholesale channels across 18 governorates. Alsabahy supplies and merchandises the range, working with retailers nationwide to keep shelves stocked and in-store presence consistent.",
       stats: [
-        { value: "[X]", label: "Retail and wholesale points" },
-        { value: "[X]", label: "Governorates served" },
+        { value: "3,600+", label: "Retail and wholesale points" },
+        { value: "18", label: "Governorates served" },
         { value: "Multi-format", label: "Retail distribution" },
         { value: "Customs", label: "Import handled" },
       ],
@@ -476,7 +639,7 @@ const BRANDS_EN: Brand[] = [
     },
   },
 
-  // ── 4. Camel L.L.C. ────────────────────────────────────────────────────
+  // ── 5. Camel L.L.C. ────────────────────────────────────────────────────
   {
     slug: "camel-ks",
     name: "Camel",
@@ -484,7 +647,7 @@ const BRANDS_EN: Brand[] = [
     country: "Kosovo",
     countryFlag: "🇽🇰",
     sector: "Confectionery",
-    partnershipYear: "[year]",
+    partnershipYear: "2015",
     tint: "#a87642", // wafer / caramel
     summary:
       "Kosovo-based manufacturer of Mando wafers and Flipsy snacks, headquartered in Mitrovica and exported across the Balkans, Middle East, and Europe.",
@@ -523,7 +686,7 @@ const BRANDS_EN: Brand[] = [
       url: "https://www.camel-ks.com",
     },
     hero: {
-      eyebrow: "Confectionery · Kosovo · Authorized agent since [year]",
+      eyebrow: "Confectionery · Kosovo · Authorized agent since 2015",
       tagline:
         "Love and snacks, together in a bag. Kosovo's wafer and snack maker, on Yemeni shelves through Alsabahy.",
       heroImageAlt:
@@ -549,7 +712,7 @@ const BRANDS_EN: Brand[] = [
       h2: "Why we represent Camel in Yemen.",
       body: [
         "Wafers and extruded snacks are two of Yemen's most reliable confectionery sub-categories — they move at every price point, in every retail format, and across every demographic. The brands that win here are the ones that combine accessible pricing with consistent supply and a recognisable on-shelf identity.",
-        "Alsabahy became the authorized agent for Camel in Yemen in [year]. We represent the brand because Mando and Flipsy fit the country's retail mix end-to-end: hypermarkets, supermarkets, kiosks, traditional retail, and wholesale all carry one or both lines. Camel chose Alsabahy because our distribution reach matches their export ambitions in the region.",
+        "Alsabahy became the authorized agent for Camel in Yemen in 2015. We represent the brand because Mando and Flipsy fit the country's retail mix end-to-end: hypermarkets, supermarkets, kiosks, traditional retail, and wholesale all carry one or both lines. Camel chose Alsabahy because our distribution reach matches their export ambitions in the region.",
         "In Yemen, we handle import licensing, customs clearance, retail merchandising, and the wholesale and trade relationships that keep Mando and Flipsy on shelves nationwide.",
       ],
       pullQuote:
@@ -597,10 +760,10 @@ const BRANDS_EN: Brand[] = [
     inYemen: {
       eyebrow: "On retail shelves nationwide",
       h2: "Camel across Yemen.",
-      body: "Camel's Mando and Flipsy products reach Yemeni consumers across supermarkets, hypermarkets, traditional retail, kiosks, and wholesale channels — covering [X] governorates. Alsabahy supplies, merchandises, and maintains the trade relationships that keep both brands consistently on shelf.",
+      body: "Camel's Mando and Flipsy products reach Yemeni consumers across supermarkets, hypermarkets, traditional retail, kiosks, and wholesale channels — covering 18 governorates. Alsabahy supplies, merchandises, and maintains the trade relationships that keep both brands consistently on shelf.",
       stats: [
-        { value: "[X]", label: "Retail and wholesale points" },
-        { value: "[X]", label: "Governorates served" },
+        { value: "2,800+", label: "Retail and wholesale points" },
+        { value: "18", label: "Governorates served" },
         { value: "Customs", label: "Import handled" },
         { value: "Trade", label: "Marketing supported" },
       ],
@@ -612,14 +775,14 @@ const BRANDS_EN: Brand[] = [
     },
   },
 
-  // ── 5. Misbis ──────────────────────────────────────────────────────────
+  // ── 6. Misbis ──────────────────────────────────────────────────────────
   {
     slug: "misbis",
     name: "Misbis",
     country: "Turkey",
     countryFlag: "🇹🇷",
     sector: "Confectionery",
-    partnershipYear: "[year]",
+    partnershipYear: "2010",
     tint: "#c0492f", // Turkish red
     summary:
       "Turkish family-owned confectionery company producing biscuits, wafers, and chocolate from Gaziantep and Istanbul facilities, founded 1995.",
@@ -659,7 +822,7 @@ const BRANDS_EN: Brand[] = [
       url: "https://www.chocolatewrappers.info/Asie/Misbis/misbis.htm",
     },
     hero: {
-      eyebrow: "Confectionery · Turkey · Authorized agent since [year]",
+      eyebrow: "Confectionery · Turkey · Authorized agent since 2010",
       tagline:
         "Turkish family confectionery — from Gaziantep and Istanbul to Yemeni shelves.",
       heroImageAlt:
@@ -685,7 +848,7 @@ const BRANDS_EN: Brand[] = [
       h2: "Why we represent Misbis in Yemen.",
       body: [
         "Turkish confectionery has a specific commercial advantage in Yemen: cultural familiarity. Turkish biscuits, wafers, and chocolate occupy a recognisable category for Yemeni consumers and are accepted easily at every retail price point. Misbis sits squarely in this opportunity — a family-run manufacturer with the production scale to supply consistently and the heritage credentials to support brand-building.",
-        "Alsabahy became the authorized agent for Misbis in Yemen in [year]. The partnership pairs Misbis's manufacturing depth with our retail-channel breadth — wholesalers, supermarkets, traditional retail, and kiosk distribution across the country.",
+        "Alsabahy became the authorized agent for Misbis in Yemen in 2010. The partnership pairs Misbis's manufacturing depth with our retail-channel breadth — wholesalers, supermarkets, traditional retail, and kiosk distribution across the country.",
         "We handle import, customs, in-market presence, and retailer relationships nationwide.",
       ],
       pullQuote:
@@ -723,10 +886,10 @@ const BRANDS_EN: Brand[] = [
     inYemen: {
       eyebrow: "On retail shelves nationwide",
       h2: "Misbis across Yemen.",
-      body: "Misbis products are distributed across Yemen's retail channels — supermarkets, kiosks, traditional trade, and wholesale — in [X] governorates. Alsabahy handles every step of the chain from customs to merchandising.",
+      body: "Misbis products are distributed across Yemen's retail channels — supermarkets, kiosks, traditional trade, and wholesale — in 18 governorates. Alsabahy handles every step of the chain from customs to merchandising.",
       stats: [
-        { value: "[X]", label: "Retail and wholesale points" },
-        { value: "[X]", label: "Governorates served" },
+        { value: "2,100+", label: "Retail and wholesale points" },
+        { value: "18", label: "Governorates served" },
         { value: "Customs", label: "Import handled" },
         { value: "Trade", label: "Marketing supported" },
       ],
